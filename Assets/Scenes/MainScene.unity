@@ -612,8 +612,8 @@ MonoBehaviour:
   player: {fileID: 1271769766}
   numberOfPlatforms: 100
   levelWidth: 3
-  minY: 0.77
-  maxY: 1.4
+  minY: 1.3
+  maxY: 1.5
 --- !u!4 &488216188
 Transform:
   m_ObjectHideFlags: 0
@@ -756,13 +756,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d5a221d18094a4e90e17c2aad8efc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disturbancPrefab: {fileID: 79604884861997894, guid: c8379884206aa1c4480c7746341d0c1a,
-    type: 3}
+  disturbancPrefab:
+  - {fileID: 7840008896203588291, guid: c9d86467e141e2840bd9f94c3f3e376a, type: 3}
+  - {fileID: 79604884861997894, guid: c8379884206aa1c4480c7746341d0c1a, type: 3}
   interval: 3
-  percentage: 50
+  percentage: 100
+  minX: -2
+  maxX: 2
   cnt: 2
-  minItervalY: 2.5
-  maxIntervalY: 4
+  minItervalY: 4
+  maxIntervalY: 6
   isDisturbance: 0
   isExist: 0
 --- !u!4 &550671299
