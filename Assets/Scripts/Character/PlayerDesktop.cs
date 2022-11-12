@@ -10,6 +10,7 @@ public class PlayerDesktop : MonoBehaviour
 
 
     public int jumpCnt = 0;
+    private bool isPlatform = false;
 
 
     private void Awake()
@@ -23,7 +24,7 @@ public class PlayerDesktop : MonoBehaviour
         Move();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCnt == 0)
+            if (jumpCnt == 0 && isPlatform)
             {
                 Jump();
             } 
@@ -54,5 +55,28 @@ public class PlayerDesktop : MonoBehaviour
         jumpCnt++;
         rigid.velocity = new Vector2(rigid.velocity.x, 0f);
         rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            isPlatform = true;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            isPlatform = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Platform")
+        {
+            isPlatform = false;
+        }
     }
 }
