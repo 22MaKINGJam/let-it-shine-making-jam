@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public GameObject itemPrefab;
+    public GameObject CookieCharacter;
 
     public int itemCount;
     public float minX, maxX, minY, maxY;
@@ -60,13 +61,14 @@ public class ItemManager : MonoBehaviour
         else
         {
             int rand = Random.Range(0, 100);
+            // 선물 아이템 확률 조정. 
             if(rand < giftPercentage && range == itemNumber)
             {
                 temp.GetComponent<Item>().SetSprite(itemNumber - 1);
             }
             else
             {
-                temp.GetComponent<Item>().SetSprite(Random.Range(0, itemNumber - 2));
+                temp.GetComponent<Item>().SetSprite(Random.Range(0, itemNumber - 1));
             }
         }
         return temp;
@@ -77,8 +79,33 @@ public class ItemManager : MonoBehaviour
     {
         // 쉴드
         GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
-        // 캐릭터 애니메이션 바꾸기 (진저쿠키 입히기)
+        ChangePlayer(CookieCharacter);
         Invoke("ShieldFalse", shieldTime);
+    }
+
+    public void ChangePlayer(GameObject obj)
+    {
+        // 캐릭터 애니메이션 바꾸기 (진저쿠키 입히기)
+        StartCoroutine(ChangingCharacter(obj));
+    }
+
+
+    IEnumerator ChangingCharacter(GameObject new_)
+    {
+        GameObject temp = GameObject.FindWithTag("Player");
+        int num = 2;
+        while (num-- >= 0)
+        {
+            temp.GetComponent<SpriteRenderer>().color = new Color(0f,0f,0f,0f);
+            yield return new WaitForSeconds(0.2f);
+            temp.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(0.2f);
+        }
+        float x = temp.transform.position.x;
+        float y = temp.transform.position.y;
+        // 플레이어 생성
+        Instantiate(new_, new Vector2(x,y), Quaternion.identity);
+        Destroy(temp);
     }
 
     public void EffectCandy()
@@ -101,15 +128,15 @@ public class ItemManager : MonoBehaviour
 
     void JumpFast()
     {
-        GameObject.Find("Player").GetComponent<PlayerDesktop>().jumpPower *= jumpPowerUp;
-        GameObject.Find("Player").GetComponent<Player>().jumpPower *= jumpPowerUp;
+        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().jumpPower *= jumpPowerUp;
+        GameObject.FindWithTag("Player").GetComponent<Player>().jumpPower *= jumpPowerUp;
     }
 
 
     void JumpOrigin()
     {
         Debug.Log("원래 속도 돌아옴!");
-        GameObject.Find("Player").GetComponent<PlayerDesktop>().jumpPower /= jumpPowerUp;
-        GameObject.Find("Player").GetComponent<Player>().jumpPower /= jumpPowerUp;
+        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().jumpPower /= jumpPowerUp;
+        GameObject.FindWithTag("Player").GetComponent<Player>().jumpPower /= jumpPowerUp;
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public VariableJoystick joy;    //조이스틱
-    public Button jumpBtn;  //점프 버튼
+    VariableJoystick joy;    //조이스틱
+    Button jumpBtn;  //점프 버튼
 
     Rigidbody2D rigid;
     Animator anim;
@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        joy = GameObject.Find("Joystick").GetComponent<VariableJoystick>();
         rigid = GetComponent<Rigidbody2D>();
+        jumpBtn = GameObject.Find("JumpBtn").GetComponent<Button>();
         jumpBtn.onClick.AddListener(changeJump);
         anim = GetComponent<Animator>();
     }
