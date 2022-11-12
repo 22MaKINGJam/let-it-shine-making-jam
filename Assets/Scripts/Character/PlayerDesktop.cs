@@ -77,6 +77,7 @@ public class PlayerDesktop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
+            GetComponent<Animator>().SetTrigger("Ground");
             isPlatform = true;
         }
     }
@@ -85,6 +86,7 @@ public class PlayerDesktop : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
+            GetComponent<Animator>().SetTrigger("Ground");
             isPlatform = true;
         }
     }
