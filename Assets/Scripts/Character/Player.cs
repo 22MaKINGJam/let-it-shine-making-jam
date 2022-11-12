@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     void Jump()
     {
         jumpCnt++;
+        rigid.velocity = new Vector2(rigid.velocity.x, 0f);
         rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
     }
 }
