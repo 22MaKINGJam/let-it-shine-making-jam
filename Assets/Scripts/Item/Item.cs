@@ -56,17 +56,15 @@ public class Item : MonoBehaviour
             case 3:
                 // 랜덤으로 아이템 나오게
                 // 약간 선물상자 뜯어지는 애니메이션
+                StartCoroutine(FadeOut(gameObject.GetComponent<SpriteRenderer>()));
                 // 새로운 아이템
                 StartCoroutine(NewItem());
-                gameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0,0);
                 break;
         }
     }
 
     IEnumerator NewItem()
     {
-        yield return new WaitForSeconds(1f);
-
         // 0.1% 확률로 슈퍼점프 아이템!
         int rand = Random.Range(0, 100);
         bool isSuperJump = false;
@@ -76,12 +74,29 @@ public class Item : MonoBehaviour
         }
         
         GameObject temp = GameObject.Find("ItemManager").GetComponent<ItemManager>().CreateItemPosition(x, y, sprites.Length - 1, isSuperJump);
-        Item newItem = temp.GetComponent<Item>();
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        temp.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        temp.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 5f, ForceMode2D.Impulse);
+        temp.GetComponent<BoxCollider2D>().enabled = false;
 
-        // 바로 사용 + 사라짐
+        // 그냥 생기고, 먹어야 사용됨
         yield return new WaitForSeconds(1f);
-        newItem.ItemEffect(newItem.GetNumber());
+        Debug.Log("멈춤");
+        temp.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        temp.GetComponent<BoxCollider2D>().enabled = true;
+        temp.GetComponent<BoxCollider2D>().isTrigger = true;
         OnDeleteObject();
+    }
+
+    IEnumerator FadeOut(SpriteRenderer background)  // 알파값 1 -> 0
+    {
+        background.color = new Color(background.color.r, background.color.g, background.color.b, 1);
+
+        while (background.color.a > 0.0f)
+        {
+            background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a - (Time.deltaTime));
+            yield return null;
+        }
     }
 
     public float GetX()
