@@ -38,13 +38,19 @@ public class VariableJoystick : Joystick
             background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
             background.gameObject.SetActive(true);
         }
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isWalk", true);
+
         base.OnPointerDown(eventData);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if(joystickType != JoystickType.Fixed)
+        Debug.Log("뗐나?");
+        if (joystickType != JoystickType.Fixed)
+        {
             background.gameObject.SetActive(false);
+        }
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isWalk", false);
 
         base.OnPointerUp(eventData);
     }
