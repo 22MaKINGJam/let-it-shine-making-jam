@@ -10,6 +10,10 @@ public class ItemManager : MonoBehaviour
     public float minX, maxX, minY, maxY;
     public float minIntervalY, maxIntervalY;
 
+    // 아이템 효과관련
+    public float shieldTime;
+    public float jumpPowerUp;
+
     private Item[] items;
     private int itemNumber;
 
@@ -55,5 +59,41 @@ public class ItemManager : MonoBehaviour
             temp.GetComponent<Item>().SetSprite(Random.Range(0, range));
         }
         return temp;
+    }
+
+
+    public void EffectGinger()
+    {
+        // 쉴드
+        GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
+        // 캐릭터 애니메이션 바꾸기 (진저쿠키 입히기)
+        Invoke("ShieldFalse", shieldTime);
+    }
+
+    public void EffectCandy()
+    {
+        // 점프 길이 n만큼 증가 (점프 force 증가)
+        JumpFast();
+        Invoke("JumpOrigin", shieldTime);
+    }
+
+    void ShieldFalse()
+    {
+        GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().EndShield();
+    }
+
+
+    void JumpFast()
+    {
+        GameObject.Find("Player").GetComponent<PlayerDesktop>().jumpPower *= jumpPowerUp;
+        GameObject.Find("Player").GetComponent<Player>().jumpPower *= jumpPowerUp;
+    }
+
+
+    void JumpOrigin()
+    {
+        Debug.Log("원래 속도 돌아옴!");
+        GameObject.Find("Player").GetComponent<PlayerDesktop>().jumpPower /= jumpPowerUp;
+        GameObject.Find("Player").GetComponent<Player>().jumpPower /= jumpPowerUp;
     }
 }

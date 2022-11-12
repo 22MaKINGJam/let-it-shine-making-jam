@@ -14,12 +14,6 @@ public class Item : MonoBehaviour
     private int number;
     private float x, y;
 
-    Ginscore ginscore;//함수 접근?
-    Score score;
-    Chescore chescore;
-    Canscore canscore;
-
-
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,20 +38,20 @@ public class Item : MonoBehaviour
                 OnDeleteObject();
                 break;
             case 0:
-                // 속도 n만큼 증가
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
+                GameObject.Find("ginobject").GetComponent<Ginscore>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
-                ginscore.GetScore();//1만큼 개수 증가
                 break;
             case 1:
-                // 점프 길이 n만큼 증가 (점프 force 증가)
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
+                GameObject.Find("canobject").GetComponent<Canscore>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
-                canscore.GetScore();
                 break;
             case 2:
                 // 점수 up
+                GameObject.Find("cheobject").GetComponent<Chescore>().GetScore();//1만큼 개수 증가
+                GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
-                chescore.GetScore();
-                score.GetScore();
                 break;
             case 3:
                 // 랜덤으로 아이템 나오게
@@ -68,7 +62,6 @@ public class Item : MonoBehaviour
                 break;
         }
     }
-    
 
     IEnumerator NewItem()
     {

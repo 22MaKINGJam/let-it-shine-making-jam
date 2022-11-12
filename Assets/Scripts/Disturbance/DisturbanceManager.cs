@@ -75,4 +75,18 @@ public class DisturbanceManager : MonoBehaviour
     {
         temp.GetComponent<Disturbance>().OnDelete();
     }
+
+    public void StartShield()
+    {
+        // 오너먼트는 통과되게
+        // 전구 통과되게+ 스크립트 비활성화
+        // 함정 스크립트 비활성화
+    }
+
+
+    public void EndShield()
+    {
+
+    }
 }
+
