@@ -6,7 +6,6 @@ public class PlatformGenerator : MonoBehaviour
 {
     public GameObject platformPrefab;
     public Camera mainCamera;
-    public GameObject player;
     public int numberOfPlatforms;
     public float levelWidth = 3f;
     public float minY = .7f;
