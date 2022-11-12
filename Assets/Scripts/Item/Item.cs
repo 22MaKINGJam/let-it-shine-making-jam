@@ -22,7 +22,7 @@ public class Item : MonoBehaviour
             Debug.Log("플레이어! 삭제!");
             ItemEffect(number);
         }
-        else if (collision.gameObject.tag == "Flatform")
+        else if (collision.gameObject.tag == "Platform")
         {
             Debug.Log("플랫폼 겹침! 삭제!");
             // 플랫폼이랑 겹치면 사라지게

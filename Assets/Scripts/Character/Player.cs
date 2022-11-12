@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public float jumpPower;
     public float speed;
-    bool isJump = false;
-    bool isDoubleJump = false;
+
+    public int jumpCnt = 0;
 
 
     private void Awake()
@@ -42,14 +42,13 @@ public class Player : MonoBehaviour
     
     void changeJump()
     {
-        if (!isJump)
+        if (jumpCnt == 0)
         {
             Jump();
         }
-        else if (isDoubleJump)
+        else if (jumpCnt == 1)
         {
             Jump();
-            isDoubleJump = false;
         }
     }
 
@@ -62,16 +61,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        isJump = true;
-        isDoubleJump = true;
+        jumpCnt++;
         rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Flatform")
-        {
-            isJump = false;
-        }
     }
 }
