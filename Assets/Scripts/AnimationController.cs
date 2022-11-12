@@ -20,7 +20,31 @@ public class AnimationController : MonoBehaviour
 
     public void JumpTrigger()
     {
-        anim.SetTrigger("Jump");
+        if (anim.GetBool("isLeft"))
+        {
+            anim.SetTrigger("JumpLeft");
+        }
+        else
+        {
+            anim.SetTrigger("JumpRight");
+        }
+    }
+
+    public void DownTrigger()
+    {
+        if (anim.GetBool("isLeft"))
+        {
+            anim.SetTrigger("DownLeft");
+        }
+        else
+        {
+            anim.SetTrigger("DownRight");
+        }
+    }
+
+    public void GroundTrigger()
+    {
+        anim.SetTrigger("Ground");
     }
 
     // Update is called once per frame

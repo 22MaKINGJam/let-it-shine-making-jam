@@ -29,14 +29,21 @@ public class PlayerDesktop : MonoBehaviour
         {
             if (jumpCnt == 0 && isPlatform)
             {
-                anim.SetTrigger("Jump");
                 Jump();
             } 
             else if (jumpCnt == 1)
             {
-                anim.SetTrigger("Jump");
                 Jump();
             }
+        }
+
+        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            anim.SetBool("isWalk", true);
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            anim.SetBool("isWalk", false);
         }
     }
 
@@ -45,11 +52,13 @@ public class PlayerDesktop : MonoBehaviour
         float playerMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            anim.SetBool("isWalk", true);
             anim.SetBool("isLeft", true);
             playerMove = speed * Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            anim.SetBool("isWalk", true);
             anim.SetBool("isLeft", false);
             playerMove = -speed * Time.deltaTime;
         }
@@ -59,6 +68,7 @@ public class PlayerDesktop : MonoBehaviour
 
     void Jump()
     {
+        GetComponent<AnimationController>().JumpTrigger();
         jumpCnt++;
         rigid.velocity = new Vector2(rigid.velocity.x, 0f);
         rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);

@@ -7,8 +7,6 @@ public class VariableJoystick : Joystick
 {
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
-    public Animator anim;
-
     [SerializeField] private float moveThreshold = 1;
     [SerializeField] private JoystickType joystickType = JoystickType.Fixed;
 
@@ -40,13 +38,19 @@ public class VariableJoystick : Joystick
             background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
             background.gameObject.SetActive(true);
         }
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isWalk", true);
+
         base.OnPointerDown(eventData);
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if(joystickType != JoystickType.Fixed)
+        Debug.Log("뗐나?");
+        if (joystickType != JoystickType.Fixed)
+        {
             background.gameObject.SetActive(false);
+        }
+        GameObject.Find("Player").GetComponent<Animator>().SetBool("isWalk", false);
 
         base.OnPointerUp(eventData);
     }
@@ -55,20 +59,8 @@ public class VariableJoystick : Joystick
     {
         if (joystickType == JoystickType.Dynamic && magnitude > moveThreshold)
         {
-            anim.SetBool("isWalk", true);
-
             Vector2 difference = normalised * (magnitude - moveThreshold) * radius;
             background.anchoredPosition += difference;
-
-            if(difference.x > 0)
-            {
-                anim.SetBool("isLeft", false);
-            }
-            else
-            {
-                anim.SetBool("isLeft", true);
-
-            }
         }
         base.HandleInput(magnitude, normalised, radius, cam);
     }
