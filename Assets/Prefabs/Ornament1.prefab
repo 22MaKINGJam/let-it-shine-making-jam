@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 79604884861997895}
   - component: {fileID: 9105138381367614771}
   - component: {fileID: -1330959445647968140}
-  - component: {fileID: 6564884731265331516}
   m_Layer: 0
-  m_Name: Disturbance
+  m_Name: Ornament1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -2025800071
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2095fb6a33f4bf64f953d297304273be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3284343299b31d4b8835c5351f3203e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,7 +92,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 79604884861997894}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dff3758cdecae7040b94139affc17f5e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -101,7 +100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 2.25}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,16 +130,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6564884731265331516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47947ffbd46ea864e858c1a5de760c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpPower: 10

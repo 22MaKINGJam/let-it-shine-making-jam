@@ -64,11 +64,11 @@ public class DisturbanceManager : MonoBehaviour
         temp.transform.parent = this.gameObject.transform;
 
         // 방해 요소 초기 세팅
-        Disturbance disturbance = temp.GetComponent<Disturbance>();
-        disturbance.SetDisturbance(idx);
+        //Disturbance disturbance = temp.GetComponent<Disturbance>();
+        //disturbance.SetDisturbance(idx);
 
         // 일단...몇 초 지나면 사라지게
-        Invoke("TempDelete", 1f);
+        //Invoke("TempDelete", 1f);
     }
 
     public void TempDelete()
