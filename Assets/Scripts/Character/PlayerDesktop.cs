@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerDesktop : MonoBehaviour
 {
     Rigidbody2D rigid;
+    Animator anim;
+
     public float jumpPower;
     public float speed;
 
@@ -15,6 +17,7 @@ public class PlayerDesktop : MonoBehaviour
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -26,10 +29,12 @@ public class PlayerDesktop : MonoBehaviour
         {
             if (jumpCnt == 0 && isPlatform)
             {
+                anim.SetTrigger("Jump");
                 Jump();
             } 
             else if (jumpCnt == 1)
             {
+                anim.SetTrigger("Jump");
                 Jump();
             }
         }
@@ -40,10 +45,12 @@ public class PlayerDesktop : MonoBehaviour
         float playerMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            anim.SetBool("isLeft", true);
             playerMove = speed * Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            anim.SetBool("isLeft", false);
             playerMove = -speed * Time.deltaTime;
         }
         transform.Translate(new Vector3(playerMove, 0, 0));

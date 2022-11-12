@@ -7,6 +7,8 @@ public class VariableJoystick : Joystick
 {
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
+    public Animator anim;
+
     [SerializeField] private float moveThreshold = 1;
     [SerializeField] private JoystickType joystickType = JoystickType.Fixed;
 
@@ -53,8 +55,20 @@ public class VariableJoystick : Joystick
     {
         if (joystickType == JoystickType.Dynamic && magnitude > moveThreshold)
         {
+            anim.SetBool("isWalk", true);
+
             Vector2 difference = normalised * (magnitude - moveThreshold) * radius;
             background.anchoredPosition += difference;
+
+            if(difference.x > 0)
+            {
+                anim.SetBool("isLeft", false);
+            }
+            else
+            {
+                anim.SetBool("isLeft", true);
+
+            }
         }
         base.HandleInput(magnitude, normalised, radius, cam);
     }
