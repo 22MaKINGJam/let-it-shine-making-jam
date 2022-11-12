@@ -35,6 +35,7 @@ public class Item : MonoBehaviour
         switch (idx)
         {
             case -1: // 슈퍼점프
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().GetSuperJump();
                 OnDeleteObject();
                 break;
             case 0:
