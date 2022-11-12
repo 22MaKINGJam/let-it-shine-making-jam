@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5613662361260002591}
   - component: {fileID: 1512033573081984611}
   - component: {fileID: 907595947865904302}
-  - component: {fileID: -7415785729664268025}
+  - component: {fileID: -8009832298250195403}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7415785729664268025
+--- !u!114 &-8009832298250195403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,10 +129,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 819448981077234747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a868713e1ef2cf74d9dd838bc8db91e8, type: 3}
+  m_Script: {fileID: 11500000, guid: d2b68e5eaf76581459c7fa27e7ffe853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
 --- !u!1 &819448981161254832
 GameObject:
   m_ObjectHideFlags: 0
