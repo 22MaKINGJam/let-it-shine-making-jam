@@ -916,8 +916,8 @@ MonoBehaviour:
   maxX: 2
   minY: -5
   maxY: 50
-  minIntervalY: 2
-  maxIntervalY: 4
+  minIntervalY: 1.5
+  maxIntervalY: 3
 --- !u!1 &1171143267
 GameObject:
   m_ObjectHideFlags: 0

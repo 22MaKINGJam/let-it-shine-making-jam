@@ -6,8 +6,13 @@ public class Item : MonoBehaviour
 {
     // 0: cookie, 1: candy, 2: cheeze, 3: gift 
     public Sprite[] sprites;
+    public Sprite superJump;
+
+    public float superJumpPercentage;
+
     private int number;
     private float x, y;
+
 
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +34,9 @@ public class Item : MonoBehaviour
     {
         switch (idx)
         {
+            case -1: // 슈퍼점프
+                OnDeleteObject();
+                break;
             case 0:
                 // 속도 n만큼 증가
                 OnDeleteObject();
@@ -56,7 +64,15 @@ public class Item : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        GameObject temp = GameObject.Find("ItemManager").GetComponent<ItemManager>().CreateItemPosition(x, y, sprites.Length - 1);
+        // 0.1% 확률로 슈퍼점프 아이템!
+        int rand = Random.Range(0, 100);
+        bool isSuperJump = false;
+        if(rand < superJumpPercentage)
+        {
+            isSuperJump = true;
+        }
+        
+        GameObject temp = GameObject.Find("ItemManager").GetComponent<ItemManager>().CreateItemPosition(x, y, sprites.Length - 1, isSuperJump);
         Item newItem = temp.GetComponent<Item>();
 
         // 바로 사용 + 사라짐
@@ -86,6 +102,15 @@ public class Item : MonoBehaviour
         x = transform.position.x;
         y = transform.position.y;
         GetComponent<SpriteRenderer>().sprite = sprites[idx];
+    }
+
+
+    public void SetSuperJump()
+    {
+        number = -1;
+        x = transform.position.x;
+        y = transform.position.y;
+        GetComponent<SpriteRenderer>().sprite = superJump;
     }
 
     public void OnDeleteObject()

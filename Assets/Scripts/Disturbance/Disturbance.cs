@@ -38,7 +38,10 @@ public class Disturbance : MonoBehaviour
     public void OnDelete()
     {
         GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().isExist = false;
-        Destroy(gameObject);
+        if (gameObject)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

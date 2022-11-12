@@ -32,11 +32,11 @@ public class ItemManager : MonoBehaviour
             float y = currentY + Random.Range(minIntervalY, maxIntervalY);
             currentY = y;
 
-            items[i] = CreateItemPosition(x, y, itemNumber).GetComponent<Item>();
+            items[i] = CreateItemPosition(x, y, itemNumber, false).GetComponent<Item>();
         }
     }
 
-    public GameObject CreateItemPosition(float x, float y, int range)
+    public GameObject CreateItemPosition(float x, float y, int range, bool isSuperJump)
     {
         Vector2 creatingPoint = new Vector2(x, y);
         GameObject temp = null;
@@ -46,7 +46,14 @@ public class ItemManager : MonoBehaviour
         }
         temp.transform.parent = this.gameObject.transform;
 
-        temp.GetComponent<Item>().SetSprite(Random.Range(0, range));
+        if (isSuperJump)
+        {
+            temp.GetComponent<Item>().SetSuperJump();
+        }
+        else
+        {
+            temp.GetComponent<Item>().SetSprite(Random.Range(0, range));
+        }
         return temp;
     }
 }
