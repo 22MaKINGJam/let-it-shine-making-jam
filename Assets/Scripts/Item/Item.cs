@@ -13,7 +13,6 @@ public class Item : MonoBehaviour
     private int number;
     private float x, y;
 
-
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,11 +37,11 @@ public class Item : MonoBehaviour
                 OnDeleteObject();
                 break;
             case 0:
-                // 속도 n만큼 증가
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
                 OnDeleteObject();
                 break;
             case 1:
-                // 점프 길이 n만큼 증가 (점프 force 증가)
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
                 OnDeleteObject();
                 break;
             case 2:
@@ -58,7 +57,6 @@ public class Item : MonoBehaviour
                 break;
         }
     }
-    
 
     IEnumerator NewItem()
     {
