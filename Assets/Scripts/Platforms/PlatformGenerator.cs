@@ -9,7 +9,7 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject player;
     public int numberOfPlatforms;
     public float levelWidth = 3f;
-    public float minY = .4f;
+    public float minY = .7f;
     public float maxY = 1.5f;
     float playerPos;
 
