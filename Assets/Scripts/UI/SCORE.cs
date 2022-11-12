@@ -8,6 +8,8 @@ public class Score : MonoBehaviour
     public Text text;
     public static int score = 0;
 
+
+
     private void Start()
     {
         SetText();
@@ -15,7 +17,7 @@ public class Score : MonoBehaviour
 
     public void GetScore()
     {
-        score += 10;
+        score += 50;
         SetText();
     }
 

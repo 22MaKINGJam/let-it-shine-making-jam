@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgoundScroller_KSH : MonoBehaviour
+public class BackgroundScroller_KSH : MonoBehaviour
 {
     public float speed;
     public int startIndex;
@@ -20,8 +20,8 @@ public class BackgoundScroller_KSH : MonoBehaviour
         Vector3 nextPos = Vector3.down * speed * Time.deltaTime;
         transform.position = curpos + nextPos;
 
-        if (sprites[endIndex].position.y < viewHeight*(-1)) // 높이가 카메라보다 작아지면 넘기기.
-        { 
+        if (sprites[endIndex].position.y < viewHeight * (-1)) // 높이가 카메라보다 작아지면 넘기기.
+        {
             Vector3 backSpritePos = sprites[startIndex].localPosition;
             Vector3 frontSpritePos = sprites[endIndex].localPosition;
             sprites[endIndex].transform.localPosition = backSpritePos + Vector3.up * 10;

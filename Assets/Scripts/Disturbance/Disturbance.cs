@@ -4,25 +4,6 @@ using UnityEngine;
 
 public class Disturbance : MonoBehaviour
 {
-    public Sprite[] sprites;
-    private int number;
-
-    public void SetDisturbance(int idx)
-    {
-        number = idx;
-        SetSprite();
-    }
-
-    public void SetSprite()
-    {
-        GetComponent<SpriteRenderer>().sprite = sprites[number];
-    }
-
-    public int GetNumber()
-    {
-        return number;
-    }
-
     private void Update()
     {
         GameObject mainCamera = GameObject.Find("Main Camera");
