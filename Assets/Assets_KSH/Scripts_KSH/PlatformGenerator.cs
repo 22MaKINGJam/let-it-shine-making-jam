@@ -20,7 +20,8 @@ public class PlatformGenerator : MonoBehaviour
             //spawnPosition.x = Random.Range(player.transform.position.x - Screen.width/2, player.transform.position.x + Screen.width / 2);
             spawnPosition.x = Random.Range(player.transform.position.x - 2, player.transform.position.x + 2);
             spawnPosition.y += Random.Range(minY, maxY); //사이의 값만 생성.
-            Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            GameObject temp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
+            temp.transform.parent = this.gameObject.transform;
         }
     }
 
