@@ -11,7 +11,6 @@ public class PlatformGenerator : MonoBehaviour
     public float levelWidth = 3f;
     public float minY = .7f;
     public float maxY = 1.5f;
-    float playerPos;
 
     private float camerapos;
     Vector3 spawnPosition;
@@ -25,7 +24,7 @@ public class PlatformGenerator : MonoBehaviour
         for (int i = 0; i < numberOfPlatforms; i++)
         {
             spawnPosition.x = Random.Range(- 2, 2);
-            spawnPosition.y += Random.Range(minY, maxY); //사이의 값만 생성.
+            spawnPosition.y += Random.Range(minY, maxY); 
             temp = Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
             temp.transform.parent = this.gameObject.transform;
         }
