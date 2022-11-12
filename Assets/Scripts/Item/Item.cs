@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -12,6 +13,12 @@ public class Item : MonoBehaviour
 
     private int number;
     private float x, y;
+
+    Ginscore ginscore;//함수 접근?
+    Score score;
+    Chescore chescore;
+    Canscore canscore;
+
 
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,14 +46,18 @@ public class Item : MonoBehaviour
             case 0:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
                 OnDeleteObject();
+                ginscore.GetScore();//1만큼 개수 증가
                 break;
             case 1:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
                 OnDeleteObject();
+                canscore.GetScore();
                 break;
             case 2:
                 // 점수 up
                 OnDeleteObject();
+                chescore.GetScore();
+                score.GetScore();
                 break;
             case 3:
                 // 랜덤으로 아이템 나오게
