@@ -7,6 +7,7 @@ public class SetSplinterAnim : MonoBehaviour
     GameObject player;
     float playerPos;
     public GameObject platformPrefab;
+    public float percentage;
 
     private void Awake()
     {
@@ -17,7 +18,7 @@ public class SetSplinterAnim : MonoBehaviour
     private void Start()
     {
         int x = Random.Range(0, 1000);
-        if (x < 1000 && x > 700)
+        if (x < 1000 && x > percentage)
         {
             animator.SetTrigger("splintTrigger");// "파라미터이름", 바꿀 값.
 

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main2_KSH.unity
     guid: b82b9577efcef7d49a4c01486388a5c2
+  - enabled: 1
+    path: Assets/Scenes/Stage2_KSH.unity
+    guid: c663fc613335f734c887239cac183366
   m_configObjects: {}
