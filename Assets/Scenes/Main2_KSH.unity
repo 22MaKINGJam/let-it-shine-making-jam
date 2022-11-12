@@ -1812,12 +1812,13 @@ GameObject:
   - component: {fileID: 1271769768}
   - component: {fileID: 1271769767}
   - component: {fileID: 1271769773}
+  - component: {fileID: 1271769774}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!247 &1271769767
 ConstantForce2D:
@@ -1973,6 +1974,20 @@ MonoBehaviour:
   jumpPower: 7
   speed: 5
   jumpCnt: 0
+--- !u!114 &1271769774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271769766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533861188bac49645bf26e70e0e80b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  splinter: {fileID: 0}
 --- !u!1 &1430569909
 GameObject:
   m_ObjectHideFlags: 0

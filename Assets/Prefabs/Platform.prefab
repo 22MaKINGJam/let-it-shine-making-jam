@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 690216683433166488}
   - component: {fileID: 2796061831661125405}
   - component: {fileID: 4224199008385823732}
+  - component: {fileID: 2205628647981200892}
   m_Layer: 0
   m_Name: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC_\uC644_0"
-  m_TagString: Untagged
+  m_TagString: Splinter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +144,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.99, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &2205628647981200892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596208568641887646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6af181c408e62c4f8511693230864a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!1 &8596208569649128250
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +253,7 @@ GameObject:
   - component: {fileID: 8596208570627569492}
   - component: {fileID: 8596208570627569495}
   - component: {fileID: -3755972757062798874}
+  - component: {fileID: 7987844404753703299}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Platform
@@ -358,3 +373,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b68e5eaf76581459c7fa27e7ffe853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7987844404753703299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8596208570627569498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6af181c408e62c4f8511693230864a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}

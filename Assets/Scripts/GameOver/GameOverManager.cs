@@ -8,15 +8,14 @@ public class GameOverManager : MonoBehaviour
     public Camera mainCamera;
     public static Action gameover;
     private float cameraBottom;
-    public Animator animator;
 
-    private GameObject splinter;
+    public GameObject splinter;
     private float height;
     private void Awake()
     {
         gameover = () => { GameOver(); };
         splinter = GameObject.FindWithTag("Splinter");
-        height = this.GetComponent<Collider>().bounds.size.y;
+        height = this.GetComponent<BoxCollider2D>().bounds.size.y;
     }
 
     void Update()
@@ -33,18 +32,18 @@ public class GameOverManager : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CheckIfSplinter(collision);
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    CheckIfSplinter(collision);
+    //}
 
-    private void CheckIfSplinter(Collision2D collision) // 2. 플레이어가 가시에 닿으면 죽음.
-    {
-        if (collision.gameObject.Equals(splinter))
-        {
-            GameOver();
-        }
-    }
+    //private void CheckIfSplinter(Collider2D collision) // 2. 플레이어가 가시에 닿으면 죽음.
+    //{
+    //    if (collision.gameObject.Equals(splinter))
+    //    {
+    //        GameOver();
+    //    }
+    //}
 
     public void GameOver()
     {

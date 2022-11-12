@@ -22,6 +22,7 @@ public class SetSplinterAnim : MonoBehaviour
             animator.SetTrigger("splintTrigger");// "파라미터이름", 바꿀 값.
 
         }
+        else Destroy(this.gameObject);
     }
     
 }
