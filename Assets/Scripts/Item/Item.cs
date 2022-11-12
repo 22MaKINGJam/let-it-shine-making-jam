@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -12,7 +13,6 @@ public class Item : MonoBehaviour
 
     private int number;
     private float x, y;
-
 
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,15 +38,19 @@ public class Item : MonoBehaviour
                 OnDeleteObject();
                 break;
             case 0:
-                // 속도 n만큼 증가
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
+                GameObject.Find("ginobject").GetComponent<Ginscore>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
                 break;
             case 1:
-                // 점프 길이 n만큼 증가 (점프 force 증가)
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
+                GameObject.Find("canobject").GetComponent<Canscore>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
                 break;
             case 2:
                 // 점수 up
+                GameObject.Find("cheobject").GetComponent<Chescore>().GetScore();//1만큼 개수 증가
+                GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
                 OnDeleteObject();
                 break;
             case 3:
@@ -58,7 +62,6 @@ public class Item : MonoBehaviour
                 break;
         }
     }
-    
 
     IEnumerator NewItem()
     {

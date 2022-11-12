@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &79604884861997894
+--- !u!1 &7840008896203588291
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 79604884861997888}
-  - component: {fileID: 79604884861997895}
-  - component: {fileID: 9105138381367614771}
-  - component: {fileID: -1330959445647968140}
-  - component: {fileID: 6564884731265331516}
+  - component: {fileID: 7840008896203588294}
+  - component: {fileID: 7840008896203588295}
+  - component: {fileID: 7840008896203588292}
+  - component: {fileID: 7840008896203588293}
+  - component: {fileID: 7840008896203588290}
   m_Layer: 0
-  m_Name: Disturbance
+  m_Name: Ornament
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &79604884861997888
+--- !u!4 &7840008896203588294
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
+  m_GameObject: {fileID: 7840008896203588291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17868105, y: 0.2660193, z: -2.5617673}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &79604884861997895
+--- !u!212 &7840008896203588295
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
+  m_GameObject: {fileID: 7840008896203588291}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -2025800071
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2095fb6a33f4bf64f953d297304273be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3284343299b31d4b8835c5351f3203e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,16 +84,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &9105138381367614771
+--- !u!61 &7840008896203588292
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
+  m_GameObject: {fileID: 7840008896203588291}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dff3758cdecae7040b94139affc17f5e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 2.25}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -110,14 +110,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!50 &-1330959445647968140
+--- !u!50 &7840008896203588293
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
+  m_GameObject: {fileID: 7840008896203588291}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -131,16 +131,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6564884731265331516
+--- !u!114 &7840008896203588290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79604884861997894}
+  m_GameObject: {fileID: 7840008896203588291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47947ffbd46ea864e858c1a5de760c84, type: 3}
+  m_Script: {fileID: 11500000, guid: a0ce648ffd24c2949927e36b043f99e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 10
+  sprites:
+  - {fileID: 21300000, guid: b3284343299b31d4b8835c5351f3203e, type: 3}
+  - {fileID: 21300000, guid: 3e4afe2a363e68c4ab43e5e67a426b3e, type: 3}
+  - {fileID: 21300000, guid: 42e3437913722154faaf88c06cd06c9b, type: 3}
+  - {fileID: 21300000, guid: 6f21f8bf18ac31743961499f0faa408f, type: 3}

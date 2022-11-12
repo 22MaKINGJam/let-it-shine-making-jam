@@ -64,15 +64,29 @@ public class DisturbanceManager : MonoBehaviour
         temp.transform.parent = this.gameObject.transform;
 
         // 방해 요소 초기 세팅
-        Disturbance disturbance = temp.GetComponent<Disturbance>();
-        disturbance.SetDisturbance(idx);
+        //Disturbance disturbance = temp.GetComponent<Disturbance>();
+        //disturbance.SetDisturbance(idx);
 
         // 일단...몇 초 지나면 사라지게
-        Invoke("TempDelete", 1f);
+        //Invoke("TempDelete", 1f);
     }
 
     public void TempDelete()
     {
         temp.GetComponent<Disturbance>().OnDelete();
     }
+
+    public void StartShield()
+    {
+        // 오너먼트는 통과되게
+        // 전구 통과되게+ 스크립트 비활성화
+        // 함정 스크립트 비활성화
+    }
+
+
+    public void EndShield()
+    {
+
+    }
 }
+
