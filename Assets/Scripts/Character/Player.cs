@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public VariableJoystick joy;    //조이스틱
+    public Button jumpBtn;  //점프 버튼
+
     Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
     public float jumpPower;
     public float speed;
     bool isJump = false;
@@ -14,37 +19,43 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        jumpBtn.onClick.AddListener(changeJump);    
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
-        if (Input.GetKeyDown(KeyCode.Space))
+        float x = joy.Horizontal;
+ 
+        Move(x);
+
+        if (x < 0)  //player 방향
         {
-            if (!isJump)
-            {
-                Jump();
-            }
-            else if (isDoubleJump)
-            {
-                Jump();
-                isDoubleJump = false;
-            }
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
+    
+    void changeJump()
+    {
+        if (!isJump)
+        {
+            Jump();
+        }
+        else if (isDoubleJump)
+        {
+            Jump();
+            isDoubleJump = false;
         }
     }
 
-    private void Move()
+    private void Move(float x)
     {
-        float playerMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            playerMove = speed * Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            playerMove = -speed * Time.deltaTime;
-        }
+        float playerMove = x * speed * Time.deltaTime;
         transform.Translate(new Vector3(playerMove, 0, 0));
     }
 
