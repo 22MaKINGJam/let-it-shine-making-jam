@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public GameObject itemPrefab, parent;
+    public GameObject itemPrefab;
 
     public int itemCount;
     public float minX, maxX, minY, maxY;
@@ -44,7 +44,7 @@ public class ItemManager : MonoBehaviour
         {
             temp = Instantiate(itemPrefab, creatingPoint, Quaternion.identity);
         }
-        temp.transform.parent = parent.transform;
+        temp.transform.parent = this.gameObject.transform;
 
         temp.GetComponent<Item>().SetSprite(Random.Range(0, range));
         return temp;

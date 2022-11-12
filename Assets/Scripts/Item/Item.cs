@@ -12,12 +12,15 @@ public class Item : MonoBehaviour
     // player item trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("플레이어! 삭제!");
             ItemEffect(number);
         }
-        else if(collision.gameObject.tag == "Item")
+        else if (collision.gameObject.tag == "Flatform")
         {
+            Debug.Log("플랫폼 겹침! 삭제!");
+            // 플랫폼이랑 겹치면 사라지게
             OnDeleteObject();
         }
     }
