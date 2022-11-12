@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bulb : MonoBehaviour
 {
     Rigidbody2D rigid;
     bool isColl = false;
+    public Button btn;
 
 
-    // Start is called before the first frame update
+    // Start is called before the first frame updateo
     void Start()
     {
         rigid = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -18,6 +20,7 @@ public class Bulb : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && isColl==false)
         {
+            GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
             isColl = true;
             rigid.bodyType = RigidbodyType2D.Static;
             GameObject.Find("Player").GetComponent<BoxCollider2D>().enabled=false;
@@ -34,6 +37,7 @@ public class Bulb : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         GameObject.Find("Player").GetComponent<BoxCollider2D>().enabled = true;
+        GameObject.Find("JumpBtn").GetComponent<Button>().interactable = true;
         isColl = false;
     }
 }
