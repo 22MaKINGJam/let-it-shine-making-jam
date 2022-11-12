@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a011d840ed72aac4d86531a4dff39aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   platformPrefab: {fileID: 8596208570627569498}
 --- !u!1 &8596208569649128250
 GameObject:
@@ -212,10 +211,10 @@ GameObject:
   - component: {fileID: 8596208570627569497}
   - component: {fileID: 8596208570627569492}
   - component: {fileID: 8596208570627569495}
-  - component: {fileID: 579630287}
+  - component: {fileID: -3755972757062798874}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +319,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &579630287
+--- !u!114 &-3755972757062798874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -329,7 +328,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8596208570627569498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a868713e1ef2cf74d9dd838bc8db91e8, type: 3}
+  m_Script: {fileID: 11500000, guid: d2b68e5eaf76581459c7fa27e7ffe853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
