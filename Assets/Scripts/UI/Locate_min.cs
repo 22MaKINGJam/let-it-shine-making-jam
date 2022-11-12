@@ -16,14 +16,14 @@ public class Locate_min : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        first=GameObject.Find("Player").transform.position.y;//1만큼 개수 증가);
+        first = GameObject.FindWithTag("Player").transform.position.y;//1만큼 개수 증가);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        second = GameObject.Find("Player").transform.position.y;
+        second = GameObject.FindWithTag("Player").transform.position.y;
         sliderA.value = second/100;
     }
 }

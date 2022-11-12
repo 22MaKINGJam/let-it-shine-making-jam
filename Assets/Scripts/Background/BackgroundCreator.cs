@@ -46,7 +46,8 @@ public class BackgroundCreator : MonoBehaviour
     {
         Vector3 creatingPoint = new Vector3(0, y,0);
         y += 10;
-        Instantiate(background, creatingPoint, Quaternion.identity);
+        GameObject temp = Instantiate(background, creatingPoint, Quaternion.identity);
+        temp.transform.parent = GameObject.Find("Canvas").transform.GetChild(0).transform;
         return y;
     }
 }

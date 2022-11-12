@@ -13,7 +13,7 @@ public class Bulb : MonoBehaviour
     // Start is called before the first frame updateo
     void Start()
     {
-        rigid = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        rigid = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,7 +23,7 @@ public class Bulb : MonoBehaviour
             GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
             isColl = true;
             rigid.bodyType = RigidbodyType2D.Static;
-            GameObject.Find("Player").GetComponent<BoxCollider2D>().enabled=false;
+            GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().enabled=false;
 
             Invoke("MovePlayer", 0.5f);
         }
@@ -36,7 +36,7 @@ public class Bulb : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        GameObject.Find("Player").GetComponent<BoxCollider2D>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().enabled = true;
         GameObject.Find("JumpBtn").GetComponent<Button>().interactable = true;
         isColl = false;
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DisturbanceManager : MonoBehaviour
 {
+    public GameObject Player_;
+
     // 방해요소 프리팹
     public GameObject [] disturbancPrefab;
 
@@ -24,6 +26,7 @@ public class DisturbanceManager : MonoBehaviour
     [HideInInspector]
     public bool isExist = false; // 동시에 2개 방해 요소는 안나오도록
 
+    int disturbanceIdx = 0;
     GameObject temp;
 
     // Start is called before the first frame update
@@ -44,6 +47,7 @@ public class DisturbanceManager : MonoBehaviour
             {
                 isExist = true;
                 int disturbance = Random.Range(0, cnt);
+                disturbanceIdx = disturbance;
                 GameObject temp = null;
                 while(temp == null)
                 {
@@ -59,7 +63,7 @@ public class DisturbanceManager : MonoBehaviour
     GameObject SetDisturbance(int idx)
     {
         // 오브젝트 생성. 플레이어 위치 좌표 얻어와서 그 위로 해야할듯! +2 ~  5 이내
-        float playerY = GameObject.Find("Player").transform.position.y;
+        float playerY = GameObject.FindWithTag("Player").transform.position.y;
         float rand = Random.Range(minItervalY, maxIntervalY);
 
         float newY = playerY + rand;
@@ -82,13 +86,27 @@ public class DisturbanceManager : MonoBehaviour
     {
         // 오너먼트는 통과되게
         // 전구 통과되게+ 스크립트 비활성화
+        temp.GetComponent<BoxCollider2D>().isTrigger = true;
+
+        if (disturbanceIdx == 1)
+        {
+            temp.GetComponent<Bulb>().enabled = false;
+        }
+
         // 함정 스크립트 비활성화
     }
 
 
     public void EndShield()
     {
+        temp.GetComponent<BoxCollider2D>().isTrigger = false;
 
+        if (disturbanceIdx == 1)
+        {
+            temp.GetComponent<Bulb>().enabled = true;
+        }
+
+        GameObject.Find("ItemManager").GetComponent<ItemManager>().ChangePlayer(Player_);
     }
 }
 
