@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: c7e6ccac7d331564eaee4b3c364dd12c
+guid: dedc20c90d3b4d54787a4f874478ca38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6681230867733303219
-    second: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC3_0"
+      213: -6441061062783736294
+    second: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC_\uC644_0"
   - first:
-      213: -6105157964145725859
-    second: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC3_1"
+      213: -3382372541518581851
+    second: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC_\uC644_1"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC3_0"
+      name: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC_\uC644_0"
       rect:
         serializedVersion: 2
-        x: 69
-        y: 115
-        width: 73
-        height: 41
+        x: 47
+        y: 110
+        width: 99
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d40b16aacef7743a0800000000000000
-      internalID: -6681230867733303219
+      spriteID: a16ec20f611cc96a0800000000000000
+      internalID: -6441061062783736294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC3_1"
+      name: "\uAC00\uC2DC\uD50C\uB7AB\uD3FC_\uC644_1"
       rect:
         serializedVersion: 2
-        x: 67
-        y: 71
-        width: 74
-        height: 43
+        x: 47
+        y: 79
+        width: 99
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5e62799d2f164ba0800000000000000
-      internalID: -6105157964145725859
+      spriteID: 5afefb418166f01d0800000000000000
+      internalID: -3382372541518581851
       vertices: []
       indices: 
       edges: []
