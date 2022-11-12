@@ -128,3 +128,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2f60951984cc484438e809dc0fe3beec, type: 3}
   superJump: {fileID: 21300000, guid: 89144533a759a374aa52d308a3ce58d3, type: 3}
   superJumpPercentage: 10
+  shieldTime: 5
+  jumpPowerUp: 1.1
