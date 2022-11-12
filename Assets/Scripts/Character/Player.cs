@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public Button jumpBtn;  //점프 버튼
 
     Rigidbody2D rigid;
-    SpriteRenderer spriteRenderer;
+    Animator anim;
     public float jumpPower;
     public float speed;
 
@@ -19,27 +19,22 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        jumpBtn.onClick.AddListener(changeJump);    
+        jumpBtn.onClick.AddListener(changeJump);
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float x = joy.Horizontal;
- 
         Move(x);
 
-        if (x < 0)  //player 방향
+        if (rigid.velocity.y < 0)
         {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
+            GetComponent<AnimationController>().DownTrigger();
         }
     }
-    
+
     void changeJump()
     {
         if (jumpCnt == 0)
@@ -56,11 +51,20 @@ public class Player : MonoBehaviour
     {
         float playerMove = x * speed * Time.deltaTime;
         transform.Translate(new Vector3(playerMove, 0, 0));
+        if (x < 0)
+        {
+            anim.SetBool("isLeft", true);
+        }
+        else if(x > 0)
+        {
+            anim.SetBool("isLeft", false);
+        }
     }
 
 
     void Jump()
     {
+        GetComponent<AnimationController>().JumpTrigger();
         jumpCnt++;
         rigid.velocity = new Vector2(rigid.velocity.x, 0f);
         rigid.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);

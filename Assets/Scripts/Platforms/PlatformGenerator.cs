@@ -19,7 +19,7 @@ public class PlatformGenerator : MonoBehaviour
 
     private void Start()
     {
-        Vector3 spawnPosition = new Vector3();
+        Vector3 spawnPosition = gameObject.transform.GetChild(0).position;
         for (int i = 0; i < numberOfPlatforms; i++)
         {
             spawnPosition.x = Random.Range(- 2, 2);
