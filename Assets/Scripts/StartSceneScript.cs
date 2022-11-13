@@ -18,7 +18,7 @@ public class StartSceneScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)||Input.touchCount>0)
+        if (Input.GetMouseButtonDown(0)||Input.touchCount>0||Input.GetKeyDown(KeyCode.Tab))
         {
             GameObject.Find("SceneChange").GetComponent<SceneChange>().OnLoadStageOneScene();
         }

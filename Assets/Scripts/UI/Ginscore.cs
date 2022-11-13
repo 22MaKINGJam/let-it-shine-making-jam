@@ -13,6 +13,11 @@ public class Ginscore : MonoBehaviour
         SetText();
     }
 
+    public void Ginreset()
+    {
+        gin_score = 0;
+    }
+
     public void GetScore()
     {
         gin_score += 1;

@@ -13,6 +13,11 @@ public class Canscore : MonoBehaviour
         SetText();
     }
 
+    public void Canreset()
+    {
+        can_score = 0;
+    }
+
     public void GetScore()
     {
         can_score += 1;

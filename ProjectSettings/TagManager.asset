@@ -17,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - GameoverUI
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 2269167225
+    locked: 0
+  - name: Anim
+    uniqueID: 2566802711
     locked: 0

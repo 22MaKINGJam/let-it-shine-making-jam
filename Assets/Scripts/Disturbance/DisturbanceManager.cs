@@ -25,6 +25,8 @@ public class DisturbanceManager : MonoBehaviour
     public bool isDisturbance = false;
     [HideInInspector]
     public bool isExist = false; // 동시에 2개 방해 요소는 안나오도록
+    [HideInInspector]
+    public bool isSheild = false;
 
     int disturbanceIdx = 0;
     GameObject temp;
@@ -46,8 +48,7 @@ public class DisturbanceManager : MonoBehaviour
             if (rand < percentage && !isExist) // 방해 요소 생성
             {
                 isExist = true;
-                //int disturbance = Random.Range(0, cnt);
-                int disturbance = 1;
+                int disturbance = Random.Range(0, cnt);
                 disturbanceIdx = disturbance;
                 GameObject temp = null;
                 while(temp == null)
@@ -87,25 +88,32 @@ public class DisturbanceManager : MonoBehaviour
     {
         // 오너먼트는 통과되게
         // 전구 통과되게+ 스크립트 비활성화
-        temp.GetComponent<BoxCollider2D>().isTrigger = true;
-
         if (disturbanceIdx == 1)
         {
             temp.GetComponent<Bulb>().enabled = false;
         }
 
+        temp.GetComponent<BoxCollider2D>().enabled = false;
+
         // 함정 스크립트 비활성화
+        isSheild = true;
     }
 
 
     public void EndShield()
     {
-        temp.GetComponent<BoxCollider2D>().isTrigger = false;
-
-        if (disturbanceIdx == 1)
+        if (temp.gameObject.activeSelf)
         {
-            temp.GetComponent<Bulb>().enabled = true;
+            if (disturbanceIdx == 1)
+            {
+                temp.GetComponent<Bulb>().enabled = true;
+            }
+
+            temp.GetComponent<BoxCollider2D>().enabled = true;
+
         }
+
+        isSheild = false;
 
         GameObject.Find("ItemManager").GetComponent<ItemManager>().ChangePlayer(Player_);
     }

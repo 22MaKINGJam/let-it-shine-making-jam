@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
             case 3:
                 // 랜덤으로 아이템 나오게
                 // 약간 선물상자 뜯어지는 애니메이션
-                StartCoroutine(FadeOut(gameObject.GetComponent<SpriteRenderer>()));
+                gameObject.GetComponent<Animator>().enabled = true;
                 // 새로운 아이템
                 StartCoroutine(NewItem());
                 break;
@@ -87,17 +87,6 @@ public class Item : MonoBehaviour
         temp.GetComponent<BoxCollider2D>().enabled = true;
         temp.GetComponent<BoxCollider2D>().isTrigger = true;
         OnDeleteObject();
-    }
-
-    IEnumerator FadeOut(SpriteRenderer background)  // 알파값 1 -> 0
-    {
-        background.color = new Color(background.color.r, background.color.g, background.color.b, 1);
-
-        while (background.color.a > 0.0f)
-        {
-            background.color = new Color(background.color.r, background.color.g, background.color.b, background.color.a - (Time.deltaTime));
-            yield return null;
-        }
     }
 
     public float GetX()
