@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class BackgroundSound : MonoBehaviour
 {
-    public static AudioSource backmusic;
+    public static GameObject gameManager;
+    public static AudioSource bgm;
 
     private void Awake()
     {
-        backmusic = GetComponent<AudioSource>();
-        if (backmusic.isPlaying) return;
+        gameManager = GameObject.Find("GameManager");
+        bgm = gameManager.GetComponent<AudioSource>(); //배경음악 저장해둠
+        if (bgm.isPlaying) return; //배경음악이 재생되고 있다면 패스
         else
         {
-            backmusic.Play();
-            DontDestroyOnLoad(this.gameObject);
+            bgm.Play();
+            DontDestroyOnLoad(gameManager); 
         }
     }
 }
