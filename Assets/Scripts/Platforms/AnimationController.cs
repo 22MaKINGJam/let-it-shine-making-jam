@@ -47,6 +47,11 @@ public class AnimationController : MonoBehaviour
         anim.SetTrigger("Ground");
     }
 
+    public void ElectricTrigger()
+    {
+        anim.SetTrigger("Electric");
+    }
+
     // Update is called once per frame
     void Update()
     {

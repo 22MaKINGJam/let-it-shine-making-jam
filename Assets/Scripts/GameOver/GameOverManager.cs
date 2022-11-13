@@ -10,6 +10,7 @@ public class GameOverManager : MonoBehaviour
     private float cameraBottom;
 
     private float height;
+
     private void Awake()
     {
         gameover = () => { gameOver(); };
@@ -31,10 +32,20 @@ public class GameOverManager : MonoBehaviour
     }
 
 
-
     public void gameOver()
     {
         Debug.Log("게임오버");
-        // 게임오버되면? 메인으로 씬 전환? 기획애니메이션으로 씬 전환?
+        GameObject.Find("Canvas").transform.Find("Panel_GameOver").gameObject.SetActive(true);
+        Time.timeScale = 0f;
+
+        //GameObject.Find("finalobject").GetComponent<Panel_GameOver>().Show();
+       // GameObject.Find("Canvas").transform.FindChild("UI_gg").gameObject.SetActive(true);
+       // GameObject.Find("UI_gg").GetComponent<UI_Gameover>().Show();
+
+
+        //FindObjectOfType<JUMP>().Die();        // FindObjectOfType<PlatformManager>().Stop(); // 발판 그만 만들어.
+        //GameObject.Find("Canvas").transform.FindChild("UI_gg").gameObject.SetActive(true);
+        //GameObject.Find("UI_gg").GetComponent<UI_Gameover>().Show();//게임오버
+        // 게임오버되면? 메인으로 씬 전환? 기획애니메이션으로 씬 전환?*/
     }
 }
