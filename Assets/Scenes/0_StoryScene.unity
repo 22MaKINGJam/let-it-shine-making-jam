@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 580, y: -607}
+  m_AnchoredPosition: {x: 574, y: -522}
   m_SizeDelta: {x: 1776.731, y: 1681.9426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515391795
@@ -369,8 +369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0028687, y: -61.7}
-  m_SizeDelta: {x: 1266.3882, y: 292.20374}
+  m_AnchoredPosition: {x: 0, y: -19.325}
+  m_SizeDelta: {x: 1266.3882, y: 273.55438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553326012
 MonoBehaviour:
@@ -404,7 +404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: 
+  m_Text: "\uC624\uB298\uC740 \uD06C\uB9AC\uC2A4\uB9C8\uC2A4!"
 --- !u!222 &553326013
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -525,8 +525,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398.87, y: 163}
-  m_SizeDelta: {x: 468.64246, y: 128.35858}
+  m_AnchoredPosition: {x: -428.91, y: 176}
+  m_SizeDelta: {x: 408.5702, y: 117.09503}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025905874
 MonoBehaviour:
@@ -549,7 +549,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9f66316d0a7aa6948901d29a56166794, type: 3}
-    m_FontSize: 100
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -717,8 +717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00018311, y: -983.31}
-  m_SizeDelta: {x: 1439.9995, y: 593.38965}
+  m_AnchoredPosition: {x: 0.000061035, y: -961.23}
+  m_SizeDelta: {x: 1440, y: 637.54736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349771238
 MonoBehaviour:
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1c48333f1cd70b54c86640a988f0f719, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1021,7 +1021,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442, y: -591}
+  m_AnchoredPosition: {x: -436, y: -522}
   m_SizeDelta: {x: 1776.731, y: 1681.9426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2082799558
