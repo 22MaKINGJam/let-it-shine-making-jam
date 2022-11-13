@@ -7,7 +7,6 @@ public class LifeManager : MonoBehaviour
 {
     public Sprite[] lifes;
     public GameObject lifeObj;
-
     private void Start()
     {
         lifeObj.GetComponent<Image>().sprite = lifes[GameSaveData.life];
