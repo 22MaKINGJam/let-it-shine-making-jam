@@ -10,7 +10,8 @@ public class GameSaveData : MonoBehaviour
     public int maxScore = 0;
 
     // 그냥 게임실행마다 관리
-    public bool isSuperJump = false;
+    public static bool isSuperJump = false;
+    public static int life = 3;
 
     // Start is called before the first frame update
     void Start()
