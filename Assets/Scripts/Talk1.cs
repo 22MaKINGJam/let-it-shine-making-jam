@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Talk : MonoBehaviour
+public class Talk1 : MonoBehaviour
 {
     public int talkCnt;       // 대화의 총 갯수
     public string[] name;          // 이름 저장
@@ -13,7 +12,6 @@ public class Talk : MonoBehaviour
     public Text txtName;
     public Text txtSentence;
     GameObject mouse1, mouse2;
-    string preName;
     int strCnt = 0;
     bool is_full=false, cut=false;
 
@@ -29,7 +27,7 @@ public class Talk : MonoBehaviour
             yield return new WaitForSeconds(speed);
         }
         txtSentence.text = message;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         is_full = true;
     }
 
@@ -37,10 +35,11 @@ public class Talk : MonoBehaviour
     {
         mouse1 = GameObject.Find("Canvas").transform.Find("Mouse1").gameObject;
         mouse2 = GameObject.Find("Canvas").transform.Find("Mouse2").gameObject;
+        //talk = new string[talkCnt]; // 대화 저장 공간을 초기화해줍니다.
+        //showCnt = new int[talkCnt];
         mouse1.SetActive(false);
         mouse2.SetActive(false);
         StartCoroutine(Typing(txtSentence, talk[0], 0.1f));
-        strCnt++;
     }
 
     // Update is called once per frame
@@ -48,19 +47,24 @@ public class Talk : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            //Debug.Log(strCnt); 
+            mouse1.SetActive(false);
+            mouse2.SetActive(false);
 
-            if (strCnt < talkCnt)
+             
+           /* if (txtName.text == "생쥐1"|| txtName.text == "생쥐2")
+            {
+                GameObject.Find("Canvas").transform.Find("Talk").gameObject.GetComponent<Image>() =;
+            }*/
+           
+            if (strCnt < talkCnt-1)
             {
                 if (is_full == true)    //모든 텍스트 출력된 상태일 때
                 {
+                    strCnt++;
                     is_full = false;
                     cut = false;
-                    mouse1.SetActive(false);
-                    mouse2.SetActive(false);
                     showAll();
-                    StartCoroutine(Typing(txtSentence, talk[strCnt], 0.1f));
-                    strCnt++;
+                    StartCoroutine(Typing(txtSentence, talk[strCnt], 0.1f));    
                 }
                 else
                 {
@@ -69,29 +73,17 @@ public class Talk : MonoBehaviour
             }
             else
             {
-                if (is_full == false)
-                {
-                    cut = true;
-                }
-                if (is_full == true)
-                {
-                    if (SceneManager.GetActiveScene().name == "0_StoryScene")
-                    {
-                        GameObject.Find("SceneChange").GetComponent<SceneChange>().OnLoadStageOneScene();
-                    }
-                    else
-                    {
-
-                    }
-                }
-
+                //GameObject.Find("SceneChange").GetComponent<SceneChange>().OnLoadStageOneScene();
             }
         }
        
     }
     void showAll()
-    { 
+    {
+
         txtName.text = name[strCnt];
+        //txtSentence.text = talk[strCnt];
+        //Debug.Log(txtName.text);
         if (txtName.text == "생쥐1")
         {
             mouse1.SetActive(true);
