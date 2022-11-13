@@ -46,7 +46,8 @@ public class DisturbanceManager : MonoBehaviour
             if (rand < percentage && !isExist) // 방해 요소 생성
             {
                 isExist = true;
-                int disturbance = Random.Range(0, cnt);
+                //int disturbance = Random.Range(0, cnt);
+                int disturbance = 1;
                 disturbanceIdx = disturbance;
                 GameObject temp = null;
                 while(temp == null)

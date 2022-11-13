@@ -413,7 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389927145c3bd3841a158c23fc30c975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 2276605}
 --- !u!1001 &214846022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1040,7 +1039,7 @@ MonoBehaviour:
   - {fileID: 7840008896203588291, guid: c9d86467e141e2840bd9f94c3f3e376a, type: 3}
   - {fileID: 79604884861997894, guid: c8379884206aa1c4480c7746341d0c1a, type: 3}
   interval: 3
-  percentage: 70
+  percentage: 100
   minX: -2
   maxX: 2
   cnt: 2
