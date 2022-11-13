@@ -5,18 +5,19 @@ using UnityEngine;
 public class Stage2PlatformGenerator : MonoBehaviour
 {
     public GameObject platform2Prefab;
+    public GameObject candy;
 
     public float minY = .7f;
     public float maxY = 1.8f;
     GameObject temp;
     public int numberToCreate;
     private Platforms[] platforms;
-    private int kindOfplatforms = 3;
-    float y;
+
+    float y = 0;
 
     void Start()
     {
-        kindOfplatforms = platform2Prefab.GetComponent<Platforms>().sprites.Length;
+
         CreateItemInit();
     }
 
@@ -25,10 +26,16 @@ public class Stage2PlatformGenerator : MonoBehaviour
         platforms = new Platforms[numberToCreate];
         for (int i = 0; i < numberToCreate; i++)
         {
-            int j = Random.Range(0, 2);
+            int j = Random.Range(0, 1);
             float x = Random.Range(-2, +2);
             y += Random.Range(minY, maxY);
-            platforms[i] = CreateItemPosition(x, y, kindOfplatforms).GetComponent<Platforms>();
+            if(i % 5 == 1)
+            {
+                Vector2 creatingPoint = new Vector2(x, y);
+                temp = Instantiate(candy, creatingPoint, Quaternion.identity);
+            }
+            else
+                platforms[i] = CreateItemPosition(x, y, 2).GetComponent<Platforms>();
         }
     }
 

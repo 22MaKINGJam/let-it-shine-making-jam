@@ -21,7 +21,7 @@ public class SetSplinterAnim : MonoBehaviour
         if (x < 1000 && x > percentage)
         {
             animator.SetTrigger("splintTrigger");// "파라미터이름", 바꿀 값.
-
+            
         }
         else Destroy(this.gameObject);
     }
