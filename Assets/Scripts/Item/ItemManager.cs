@@ -77,11 +77,11 @@ public class ItemManager : MonoBehaviour
 
     public void EffectGinger()
     {
-        if(GameObject.FindWithTag("Player").GetComponent<Animator>().runtimeAnimatorController == CookieCharacter.GetComponent<Animator>().runtimeAnimatorController)
-        {
-            Debug.Log("넘어감!");
-            return;
-        }
+        //if(GameObject.FindWithTag("Player").GetComponent<Animator>().runtimeAnimatorController == CookieCharacter.GetComponent<Animator>().runtimeAnimatorController)
+        //{
+        //    Debug.Log("넘어감!");
+        //    return;
+        //}
         // 쉴드
         GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
         ChangePlayer(CookieCharacter);

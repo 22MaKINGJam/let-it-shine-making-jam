@@ -30,6 +30,18 @@ public class AnimationController : MonoBehaviour
         }
     }
 
+    public void SuperJumpTrigger()
+    {
+        if (anim.GetBool("isLeft"))
+        {
+            anim.SetTrigger("SuperJumpLeft");
+        }
+        else
+        {
+            anim.SetTrigger("SuperJumpRight");
+        }
+    }
+
     public void DownTrigger()
     {
         if (anim.GetBool("isLeft"))
