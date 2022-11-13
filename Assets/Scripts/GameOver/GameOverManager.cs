@@ -9,13 +9,11 @@ public class GameOverManager : MonoBehaviour
     public static Action gameover;
     private float cameraBottom;
 
-    public GameObject splinter;
     private float height;
 
     private void Awake()
     {
         gameover = () => { gameOver(); };
-        splinter = GameObject.FindWithTag("Splinter");
         height = this.GetComponent<BoxCollider2D>().bounds.size.y;
     }
 
