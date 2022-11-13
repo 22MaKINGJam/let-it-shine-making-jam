@@ -128,7 +128,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ccd099d2583ec0646a83464eaf122fee, type: 3}
   - {fileID: 21300000, guid: 87c8900b1270c894a9b1e5f6275b283a, type: 3}
   - {fileID: 21300000, guid: 2f60951984cc484438e809dc0fe3beec, type: 3}
-  superJump: {fileID: 21300000, guid: 89144533a759a374aa52d308a3ce58d3, type: 3}
+  superJump: {fileID: 21300000, guid: bb9f7be3795b5824b8b7b3dc720cf71d, type: 3}
   superJumpPercentage: 10
 --- !u!50 &2430645999057523569
 Rigidbody2D:

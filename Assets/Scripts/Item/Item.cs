@@ -77,6 +77,7 @@ public class Item : MonoBehaviour
         if(rand < superJumpPercentage)
         {
             isSuperJump = true;
+            GameSaveData.isSuperJump = true;
         }
         
         GameObject temp = GameObject.Find("ItemManager").GetComponent<ItemManager>().CreateItemPosition(x, y, sprites.Length - 1, isSuperJump);
