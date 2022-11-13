@@ -34,7 +34,11 @@ public class Bulb : MonoBehaviour
             //캐릭터 움직임 비활성
             GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
             GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
-
+            GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
+            if (GameSaveData.life == 0)
+            {
+                GameOverManager.gameover();
+            }
             Invoke("MovePlayer", 1f);
         }
     }
