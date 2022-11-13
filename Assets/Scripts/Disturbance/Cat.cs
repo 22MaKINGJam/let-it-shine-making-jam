@@ -30,7 +30,9 @@ public class Cat : MonoBehaviour
             {
                 if (isFadeIn == false)
                 {
+                    Debug.Log("hi");
                     fadeIn();
+                    //GameOverManager.gameover();
                 }
             }
             else
@@ -52,6 +54,7 @@ public class Cat : MonoBehaviour
         StartCoroutine("FadeInStart");
         isFadeIn = true;
         //Invoke("fadeOut", 2f);
+        //GameOverManager.gameover();
     }
 
     void fadeOut()
@@ -70,6 +73,7 @@ public class Cat : MonoBehaviour
             spriterenderer.material.color = c;
             yield return new WaitForSeconds(0.1f);
         }
+        GameOverManager.gameover();
     }
 
     //페이드 인
