@@ -102,12 +102,16 @@ public class DisturbanceManager : MonoBehaviour
 
     public void EndShield()
     {
-        if (disturbanceIdx == 1)
+        if (temp.gameObject.activeSelf)
         {
-            temp.GetComponent<Bulb>().enabled = true;
-        }
+            if (disturbanceIdx == 1)
+            {
+                temp.GetComponent<Bulb>().enabled = true;
+            }
 
-        temp.GetComponent<BoxCollider2D>().enabled = true;
+            temp.GetComponent<BoxCollider2D>().enabled = true;
+
+        }
 
         isSheild = false;
 
