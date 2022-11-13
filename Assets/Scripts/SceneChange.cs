@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public AudioClip stage2;
     public void OnLoadStartScene()
     {
         // 스타트 씬 로드
@@ -20,6 +21,9 @@ public class SceneChange : MonoBehaviour
 
     public void OnLoadStageTwoScene()
     {
+        BackgroundSound.bgm.clip = stage2;
+        BackgroundSound.bgm.Play();
+
         SceneManager.LoadScene("3_MainScene");
 
     }
