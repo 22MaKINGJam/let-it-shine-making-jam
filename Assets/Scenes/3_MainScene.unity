@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389927145c3bd3841a158c23fc30c975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 2276605}
 --- !u!1001 &214846022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -999,6 +1000,7 @@ MonoBehaviour:
   maxIntervalY: 8
   isDisturbance: 0
   isExist: 0
+  isSheild: 0
 --- !u!4 &550671299
 Transform:
   m_ObjectHideFlags: 0

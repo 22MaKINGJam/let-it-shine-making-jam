@@ -7,13 +7,13 @@ public class SceneChange : MonoBehaviour
 {
     public void OnLoadStartScene()
     {
-        PlayerPrefs.SetInt("isStart", 1);
         // 스타트 씬 로드
         SceneManager.LoadScene("1_StartScene");
     }
 
     public void OnLoadStageOneScene()
     {
+        PlayerPrefs.SetInt("isStart", 1);
         SceneManager.LoadScene("2_MainScene");
 
     }

@@ -35,7 +35,7 @@ public class Bulb : MonoBehaviour
             GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
             GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
 
-            Invoke("MovePlayer", 1.5f);
+            Invoke("MovePlayer", 1f);
         }
     }
 
