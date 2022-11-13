@@ -13,6 +13,11 @@ public class Chescore : MonoBehaviour
         SetText();
     }
 
+    public void Chereset()
+    {
+        che_score = 0;
+    }
+
     public void GetScore()
     {
         che_score += 1;

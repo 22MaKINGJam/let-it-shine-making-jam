@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class Score : MonoBehaviour
 {
     public Text text;
     public static int score = 0;
+    public static int final;
 
 
     private void Start()
@@ -27,7 +29,15 @@ public class Score : MonoBehaviour
         SetText();
     }
 
+    public int Getfinal()
+    {
+        return score;
+    }
 
+    public void Scorereset()
+    {
+        score = 0;
+    }
 
     public void SetText()
     {
