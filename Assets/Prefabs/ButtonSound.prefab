@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3735881498170028682}
-  - component: {fileID: 2506654917047459318}
   - component: {fileID: 3933210740742410926}
+  - component: {fileID: 1584698654344354559}
   m_Layer: 0
   m_Name: ButtonSound
   m_TagString: Untagged
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2506654917047459318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5550505259028086693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6a4ef9cf0200f04585f776561bb9025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
 --- !u!82 &3933210740742410926
 AudioSource:
   m_ObjectHideFlags: 0
@@ -141,3 +128,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1584698654344354559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550505259028086693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a4ef9cf0200f04585f776561bb9025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  cookie: {fileID: 8300000, guid: a8f0f0e91fbe9db42875f0b40d15c535, type: 3}
+  cheeze: {fileID: 8300000, guid: abc92125c9117904abe344d719427a2a, type: 3}
+  jump1: {fileID: 8300000, guid: c6d666f54a353e04d922006b100d0dff, type: 3}
+  jump2: {fileID: 8300000, guid: c82e06efa1e3089468093c1a68c50f67, type: 3}
+  gift: {fileID: 8300000, guid: 64e42712b4b970a4b9e24161b5ffbca8, type: 3}
+  gameOver: {fileID: 8300000, guid: b72a9e05a7462004bb4e9678553899f5, type: 3}
+  nextStep: {fileID: 8300000, guid: 88e19f72dd326ad4e92251dc2319bb11, type: 3}

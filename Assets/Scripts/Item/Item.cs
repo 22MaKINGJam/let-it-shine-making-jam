@@ -36,28 +36,33 @@ public class Item : MonoBehaviour
         {
             case -1: // 슈퍼점프
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().GetSuperJump();
+                ButtonSound._buttonInstance.OnJump2();
                 OnDeleteObject();
                 break;
             case 0:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
                 GameObject.Find("ginobject").GetComponent<Ginscore>().GetScore();//1만큼 개수 증가
+                ButtonSound._buttonInstance.OnCookie();
                 OnDeleteObject();
                 break;
             case 1:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
                 GameObject.Find("canobject").GetComponent<Canscore>().GetScore();//1만큼 개수 증가
+                ButtonSound._buttonInstance.OnCookie();
                 OnDeleteObject();
                 break;
             case 2:
                 // 점수 up
                 GameObject.Find("cheobject").GetComponent<Chescore>().GetScore();//1만큼 개수 증가
                 GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
+                ButtonSound._buttonInstance.OnCheeze();
                 OnDeleteObject();
                 break;
             case 3:
                 // 랜덤으로 아이템 나오게
                 // 약간 선물상자 뜯어지는 애니메이션
                 gameObject.GetComponent<Animator>().enabled = true;
+                ButtonSound._buttonInstance.OnGift();
                 // 새로운 아이템
                 StartCoroutine(NewItem());
                 break;

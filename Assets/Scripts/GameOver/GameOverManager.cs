@@ -36,7 +36,7 @@ public class GameOverManager : MonoBehaviour
     {
         Debug.Log("게임오버");
         GameObject.Find("Canvas").transform.Find("Panel_GameOver").gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
 
         //GameObject.Find("finalobject").GetComponent<Panel_GameOver>().Show();
        // GameObject.Find("Canvas").transform.FindChild("UI_gg").gameObject.SetActive(true);

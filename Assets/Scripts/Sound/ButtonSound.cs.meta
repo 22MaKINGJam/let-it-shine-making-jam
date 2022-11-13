@@ -3,7 +3,15 @@ guid: a6a4ef9cf0200f04585f776561bb9025
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - cookie: {fileID: 8300000, guid: a8f0f0e91fbe9db42875f0b40d15c535, type: 3}
+  - cheeze: {fileID: 8300000, guid: abc92125c9117904abe344d719427a2a, type: 3}
+  - jump1: {fileID: 8300000, guid: c6d666f54a353e04d922006b100d0dff, type: 3}
+  - jump2: {fileID: 8300000, guid: 04db885594abfe44291c3155ed1ef2fe, type: 3}
+  - gift: {fileID: 8300000, guid: 64e42712b4b970a4b9e24161b5ffbca8, type: 3}
+  - gameOver: {fileID: 8300000, guid: b72a9e05a7462004bb4e9678553899f5, type: 3}
+  - nextStep: {fileID: 8300000, guid: 88e19f72dd326ad4e92251dc2319bb11, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

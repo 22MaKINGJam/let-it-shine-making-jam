@@ -33,12 +33,12 @@ public class Panel_GameOver : MonoBehaviour
         FindObjectOfType<Canscore>().Canreset();//candy
         FindObjectOfType<Chescore>().Chereset();//cheese
         FindObjectOfType<Ginscore>().Ginreset();//cookie
-        SceneManager.LoadScene("MainScene_yungin");
         Time.timeScale = 1f;//테스트신
         GameSaveData.isSuperJump = false;
         GameSaveData.life = 3;
-
-
+       
+        SceneManager.LoadScene("2_MainScene");
+        Debug.Log(Time.timeScale);
     }
 
     public void OnClick_Main()

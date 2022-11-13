@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/3_MainScene.unity
     guid: a01484ea88f70a340bbc80f1f473bef1
   - enabled: 1
-    path: Assets/Scenes/4_EndScene.unity
+    path: Assets/Scenes/4_EndScene1.unity
     guid: eefae3eb0391aef4fa04b13034a639af
   - enabled: 0
     path: Assets/Scenes/Scene_KSH.unity
