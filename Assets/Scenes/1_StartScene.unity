@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf45a5790612cb4984da9849c0b9933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage2: {fileID: 0}
 --- !u!4 &552775535
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 947096359}
   - component: {fileID: 947096358}
-  - component: {fileID: 947096357}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -397,18 +397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &947096357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947096356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 589b0e5308f73344cbabbc47451e7207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &947096358
 AudioSource:
   m_ObjectHideFlags: 0
@@ -419,8 +407,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bd0ed2bcaded0d44bb98d479d6affe5e, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 3808c82c42e25394092b69fc51744840, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1138,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

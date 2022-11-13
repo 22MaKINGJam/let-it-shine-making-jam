@@ -16,6 +16,7 @@ public class GameSaveData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         var obj = FindObjectsOfType<GameSaveData>();
         if (obj.Length == 1)
         {
@@ -25,20 +26,9 @@ public class GameSaveData : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
-        if (PlayerPrefs.HasKey("isStart"))
-        {
-            LoadData();
-        }
-        else
-        {
-            // 스토리 씬 로드
-            SceneManager.LoadScene("0_StoryScene");
-        }
     }
 
-    void LoadData()
+    public void LoadData()
     {
         if (PlayerPrefs.HasKey("maxScore"))
         {

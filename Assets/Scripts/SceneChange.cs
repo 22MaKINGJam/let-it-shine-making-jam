@@ -14,9 +14,17 @@ public class SceneChange : MonoBehaviour
 
     public void OnLoadStageOneScene()
     {
-        PlayerPrefs.SetInt("isStart", 1);
-        SceneManager.LoadScene("2_MainScene");
-
+        if (PlayerPrefs.HasKey("isStart"))
+        {
+            GameObject.Find("GameData").GetComponent<GameSaveData>().LoadData();
+            SceneManager.LoadScene("2_MainScene");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isStart", 1);
+            // 스토리 씬 로드
+            SceneManager.LoadScene("0_StoryScene");
+        }
     }
 
     public void OnLoadStageTwoScene()

@@ -14,7 +14,7 @@ public class SplinterTrigger : MonoBehaviour
         {
             Debug.Log("플레이어가 가시에 닿음");
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
-            if (GameSaveData.life == 0)
+            if (GameSaveData.life <= 0)
             {
                 GameOverManager.gameover();
             }
