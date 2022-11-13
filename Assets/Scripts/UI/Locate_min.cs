@@ -12,6 +12,8 @@ public class Locate_min : MonoBehaviour
     float first;
     float second;
     float third;
+    float maxY = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,11 @@ public class Locate_min : MonoBehaviour
     void Update()
     {
         second = GameObject.FindWithTag("Player").transform.position.y;
+        if (second/100 > maxY)
+        {
+           maxY = second/100;
+           GameObject.Find("mainobject").GetComponent<Score>().PlatScore();
+        }
         sliderA.value = second/100;
     }
 }
