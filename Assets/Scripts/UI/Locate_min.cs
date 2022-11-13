@@ -26,11 +26,11 @@ public class Locate_min : MonoBehaviour
     void Update()
     {
         second = GameObject.FindWithTag("Player").transform.position.y;
-        if (second/100 > maxY)
+        if (second/200 > maxY)
         {
-           maxY = second/100;
+           maxY = second/200;
            GameObject.Find("mainobject").GetComponent<Score>().PlatScore();
         }
-        sliderA.value = second/100;
+        sliderA.value = second/200;
     }
 }
