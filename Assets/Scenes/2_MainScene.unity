@@ -481,6 +481,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662322008653750430, guid: 053e73d449ec5e747b9ac86065e36487,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.4520111
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662322008653750430, guid: 053e73d449ec5e747b9ac86065e36487,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.13616958
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053e73d449ec5e747b9ac86065e36487, type: 3}
 --- !u!1 &261115962
@@ -889,7 +899,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 8596208570627569498, guid: c47ea551598414341a235c21b7e02eb4,
     type: 3}
-  mainCamera: {fileID: 519420031}
   numberOfPlatforms: 200
   levelWidth: 3
   minY: 0.7
@@ -2537,7 +2546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
-  splinter: {fileID: 0}
 --- !u!1 &1866855327
 GameObject:
   m_ObjectHideFlags: 0
