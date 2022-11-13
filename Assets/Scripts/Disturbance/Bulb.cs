@@ -32,9 +32,8 @@ public class Bulb : MonoBehaviour
             GameObject.FindWithTag("Player").GetComponent<AnimationController>().ElectricTrigger();
             
             //캐릭터 움직임 비활성
-            GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = false;
-            GameObject.Find("JumpBtn").GetComponent<Button>().enabled = false;
-            GameObject.Find("Player").GetComponent<PlayerDesktop>().enabled = false;
+            GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
+            GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
 
             Invoke("MovePlayer", 1.5f);
         }
@@ -43,9 +42,8 @@ public class Bulb : MonoBehaviour
     void MovePlayer()
     {
         //캐릭터 움직임 활성
-        GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = true;
-        GameObject.Find("JumpBtn").GetComponent<Button>().enabled = true;
-        GameObject.Find("Player").GetComponent<PlayerDesktop>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<Player>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = true;
 
         GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         GameObject.Find("Bulb").GetComponent<BoxCollider2D>().enabled = false ;
