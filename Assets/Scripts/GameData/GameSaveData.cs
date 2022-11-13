@@ -50,6 +50,15 @@ public class GameSaveData : MonoBehaviour
         }
     }
 
+    public int GetMaxScore()
+    {
+        if (PlayerPrefs.HasKey("maxScore"))
+        {
+            return PlayerPrefs.GetInt("maxScore");
+        }
+        return 0;
+    }
+
     public void SaveScore(int score)
     {
         if(score > maxScore)
