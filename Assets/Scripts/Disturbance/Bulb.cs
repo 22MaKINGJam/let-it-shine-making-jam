@@ -38,7 +38,7 @@ public class Bulb : MonoBehaviour
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
             if (GameSaveData.life == 0)
             {
-                GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("앗! 고양이한테 잡혀버렸어…멈추면 안돼! ");
+                GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("결국 생쥐들의 크리스마스는 반짝반짝거리지 못했다…");
             }
             Invoke("MovePlayer", 1f);
         }
