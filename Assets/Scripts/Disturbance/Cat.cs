@@ -77,16 +77,18 @@ public class Cat : MonoBehaviour
     //페이드 인
     IEnumerator FadeOutStart()
     {
+        SpriteRenderer player = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>();
         for (int i = 10; i >= 0; i--)
         {
             float f = i / 10.0f;
             Color c = spriterenderer.material.color;
             c.a = f;
             spriterenderer.material.color = c;
+            player.color = c;
             yield return new WaitForSeconds(0.1f);
 
         }
-        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
+        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("앗! 고양이한테 잡혀버렸어…멈추면 안돼! ");
 
     }
 

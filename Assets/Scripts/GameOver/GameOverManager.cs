@@ -46,14 +46,15 @@ public class GameOverManager : MonoBehaviour
         if (player.transform.position.y + height/2 < cameraBottom && !isOver)
         {
             isOver = true;
-            gameOver();
+            gameOver("결국 생쥐들의 크리스마스는 반짝반짝거리지 못했다…");
         }
     }
 
 
-    public void gameOver()
+    public void gameOver(string msg)
     {
         Debug.Log("게임오버");
+        gameOverPopup.GetComponent<Panel_GameOver>().gameOverMsg = msg;
         gameOverPopup.SetActive(true);
     }
 }

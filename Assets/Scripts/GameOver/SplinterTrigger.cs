@@ -28,7 +28,7 @@ public class SplinterTrigger : MonoBehaviour
 
     void InvokeGameOver()
     {
-        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
+        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("결국 생쥐들의 크리스마스는 반짝반짝거리지 못했다…");
     }
 
     IEnumerator ChangingRed(GameObject player)

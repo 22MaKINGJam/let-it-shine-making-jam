@@ -8,6 +8,8 @@ public class Panel_GameOver : MonoBehaviour
 {
     public Text Text_GameResult;
     public Text Text_Best;
+    public Text gameOverText;
+    public string gameOverMsg = "";
 
     public RuntimeAnimatorController originPlayer;
 
@@ -29,6 +31,11 @@ public class Panel_GameOver : MonoBehaviour
         int best = FindObjectOfType<GameSaveData>().GetMaxScore();
         Text_GameResult.text = "Score : " + score.ToString();
         Text_Best.text="Best : "+ best.ToString();
+
+        if(gameOverText != null)
+        {
+            gameOverText.text = gameOverMsg;
+        }
     }
 
     public void OnClick_Retry() 

@@ -1535,6 +1535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 2087298723}
   Text_Best: {fileID: 1289452436}
+  gameOverText: {fileID: 0}
+  gameOverMsg: 
   originPlayer: {fileID: 0}
 --- !u!1 &690992467
 GameObject:
@@ -2321,6 +2323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 2087298723}
   Text_Best: {fileID: 1289452436}
+  gameOverText: {fileID: 0}
+  gameOverMsg: 
   originPlayer: {fileID: 9100000, guid: 10d447c4693c0d24e881cb8ac4ca3423, type: 2}
 --- !u!212 &873774234
 SpriteRenderer:
@@ -4642,6 +4646,8 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 34922803}
   cookiePlayer: {fileID: 9100000, guid: 859e2948a18060141a5364ef36a2c23c, type: 2}
+  ItemEffectPopup: {fileID: 0}
+  ItemEffectString: []
   itemCount: 50
   minX: -2
   maxX: 2
