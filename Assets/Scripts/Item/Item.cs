@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
         {
             case -1: // 슈퍼점프
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().GetSuperJump();
-                ButtonSound._buttonInstance.OnJump2();
+                ButtonSound._buttonInstance.OnGift();
                 OnDeleteObject();
                 break;
             case 0:
@@ -48,7 +48,7 @@ public class Item : MonoBehaviour
             case 1:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
                 GameObject.Find("canobject").GetComponent<Canscore>().GetScore();//1만큼 개수 증가
-                ButtonSound._buttonInstance.OnCookie();
+                ButtonSound._buttonInstance.OnCheeze();
                 OnDeleteObject();
                 break;
             case 2:

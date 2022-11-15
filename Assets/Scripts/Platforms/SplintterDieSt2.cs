@@ -13,7 +13,7 @@ public class SplintterDieSt2 : MonoBehaviour
         if (collision.transform.tag == "Player" ) // 플레이어가 위에 있음.
         {
             Debug.Log("플레이어가 가시에 닿음");
-            GameOverManager.gameover();
+            GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
 
         }
     }

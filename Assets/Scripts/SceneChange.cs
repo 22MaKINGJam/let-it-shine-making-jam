@@ -29,11 +29,7 @@ public class SceneChange : MonoBehaviour
 
     public void OnLoadStageTwoScene()
     {
-        BackgroundSound.bgm.clip = stage2;
-        BackgroundSound.bgm.Play();
-
         SceneManager.LoadScene("3_MainScene");
-
     }
 
     public void OnLoadEndScene()

@@ -8,18 +8,20 @@ public class Panel_GameOver : MonoBehaviour
 {
     public Text Text_GameResult;
     public Text Text_Best;
-    private void Awake()
-    {
-        transform.gameObject.SetActive(false); 
-    }
 
     public void Start()
     {
         Show();
+        Time.timeScale = 0f;
     }
 
     public void Show()
     {
+        GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
+        GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
+        GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = false;
+
         int score = FindObjectOfType<Score>().Getfinal();
         FindObjectOfType<GameSaveData>().SaveScore(score);
         int best = FindObjectOfType<GameSaveData>().GetMaxScore();
@@ -38,7 +40,6 @@ public class Panel_GameOver : MonoBehaviour
         GameSaveData.life = 3;
        
         SceneManager.LoadScene("2_MainScene");
-        Debug.Log(Time.timeScale);
     }
 
     public void OnClick_Main()

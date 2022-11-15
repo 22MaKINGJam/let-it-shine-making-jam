@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        ButtonSound._buttonInstance.OnJump1();
         GetComponent<AnimationController>().JumpTrigger();
         jumpCnt++;
         rigid.velocity = new Vector2(rigid.velocity.x, 0f);

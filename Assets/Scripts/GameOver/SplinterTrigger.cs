@@ -14,13 +14,24 @@ public class SplinterTrigger : MonoBehaviour
         {
             Debug.Log("플레이어가 가시에 닿음");
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
-            if (GameSaveData.life <= 0)
+            if (GameSaveData.life == 0)
             {
-                GameOverManager.gameover();
+                GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
             }
-
         }
 
+    }
+
+    IEnumerator ChangingRed(GameObject player)
+    {
+        int num = 2;
+        while (num-- >= 0)
+        {
+            player.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+            yield return new WaitForSeconds(0.2f);
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
 }

@@ -32,6 +32,7 @@ public class SuperJumpInit : MonoBehaviour
 
     void SuperJumpStart()
     {
+        ButtonSound._buttonInstance.OnJump2();
         // 슈퍼점프!
         GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().AddForce(Vector3.up * superJumpPower, ForceMode2D.Impulse);
         GameObject.FindWithTag("Player").GetComponent<AnimationController>().SuperJumpTrigger();
