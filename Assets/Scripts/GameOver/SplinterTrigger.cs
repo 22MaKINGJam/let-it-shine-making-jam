@@ -19,16 +19,22 @@ public class SplinterTrigger : MonoBehaviour
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
             if (GameSaveData.life == 0)
             {
-                GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
+                // 함정 이펙트 적용 시간 기다렸다가 게임 오버
+                Invoke("InvokeGameOver", 1f);
             }
         }
 
     }
 
+    void InvokeGameOver()
+    {
+        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver();
+    }
+
     IEnumerator ChangingRed(GameObject player)
     {
         int num = 2;
-        while (num-- >= 0)
+        while (num-- > 0)
         {
             player.GetComponent<SpriteRenderer>().color = new Color(1f, 0.46f, 0.46f, 1f);
             yield return new WaitForSeconds(0.2f);

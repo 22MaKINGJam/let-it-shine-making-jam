@@ -41,18 +41,22 @@ public class Item : MonoBehaviour
                 break;
             case 0:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectGinger();
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().ItemPopupActive(idx);
                 GameObject.Find("ginobject").GetComponent<Ginscore>().GetScore();//1만큼 개수 증가
                 ButtonSound._buttonInstance.OnCookie();
                 OnDeleteObject();
                 break;
             case 1:
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().EffectCandy();
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().ItemPopupActive(idx);
                 GameObject.Find("canobject").GetComponent<Canscore>().GetScore();//1만큼 개수 증가
                 ButtonSound._buttonInstance.OnCheeze();
                 OnDeleteObject();
                 break;
             case 2:
                 // 점수 up
+                GameObject.Find("ItemManager").GetComponent<ItemManager>().ItemPopupActive(idx);
+
                 GameObject.Find("cheobject").GetComponent<Chescore>().GetScore();//1만큼 개수 증가
                 GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
                 ButtonSound._buttonInstance.OnCheeze();

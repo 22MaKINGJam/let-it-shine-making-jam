@@ -9,6 +9,8 @@ public class Panel_GameOver : MonoBehaviour
     public Text Text_GameResult;
     public Text Text_Best;
 
+    public RuntimeAnimatorController originPlayer;
+
     public void Start()
     {
         Show();
@@ -35,6 +37,12 @@ public class Panel_GameOver : MonoBehaviour
         FindObjectOfType<Canscore>().Canreset();//candy
         FindObjectOfType<Chescore>().Chereset();//cheese
         FindObjectOfType<Ginscore>().Ginreset();//cookie
+
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        player.GetComponent<Animator>().runtimeAnimatorController = originPlayer;
+
+
         Time.timeScale = 1f;//테스트신
         GameSaveData.isSuperJump = false;
         GameSaveData.life = 3;

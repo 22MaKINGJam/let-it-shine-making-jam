@@ -108,16 +108,19 @@ public class DisturbanceManager : MonoBehaviour
 
     public void EndShield()
     {
-        isSheild = false;
         GameObject.Find("ItemManager").GetComponent<ItemManager>().ChangePlayer(originPlayer);
+        Invoke("RealEndShield", 0.5f);
+    }
 
-
+    void RealEndShield()
+    {
+        isSheild = false;
         if (temp == null)
         {
             return;
         }
 
-       if (disturbanceIdx == 1)
+        if (disturbanceIdx == 1)
         {
             temp.GetComponent<Bulb>().enabled = true;
         }

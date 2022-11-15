@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 2087298723}
   Text_Best: {fileID: 1289452436}
+  originPlayer: {fileID: 0}
 --- !u!1 &690992467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 2087298723}
   Text_Best: {fileID: 1289452436}
+  originPlayer: {fileID: 9100000, guid: 10d447c4693c0d24e881cb8ac4ca3423, type: 2}
 --- !u!212 &873774234
 SpriteRenderer:
   m_ObjectHideFlags: 0

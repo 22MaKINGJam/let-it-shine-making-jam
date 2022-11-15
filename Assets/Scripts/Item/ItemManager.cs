@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
     public GameObject itemPrefab;
     public GameObject player;
     public RuntimeAnimatorController cookiePlayer;
+
+    public GameObject ItemEffectPopup;
+    public string[] ItemEffectString;
 
     public int itemCount;
     public float minX, maxX, minY, maxY;
@@ -99,7 +103,7 @@ public class ItemManager : MonoBehaviour
     IEnumerator ChangingCharacter(RuntimeAnimatorController newAnimation)
     {
         int num = 2;
-        while (num-- >= 0)
+        while (num-- > 0)
         {
             player.GetComponent<SpriteRenderer>().color = new Color(0f,0f,0f,0f);
             yield return new WaitForSeconds(0.2f);
@@ -116,6 +120,18 @@ public class ItemManager : MonoBehaviour
         // 점프 길이 n만큼 증가 (점프 force 증가)
         JumpFast();
         Invoke("JumpOrigin", shieldTime);
+    }
+
+    public void ItemPopupActive(int idx)
+    {
+        ItemEffectPopup.transform.GetChild(0).GetComponent<Text>().text = ItemEffectString[idx];
+        ItemEffectPopup.SetActive(true);
+        Invoke("RemovePopup", 1f);
+    }
+
+    void RemovePopup()
+    {
+        ItemEffectPopup.SetActive(false);
     }
 
     public void GetSuperJump()
