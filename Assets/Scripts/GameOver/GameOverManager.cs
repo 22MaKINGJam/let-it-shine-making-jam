@@ -30,13 +30,13 @@ public class GameOverManager : MonoBehaviour
     private void CheckIfOut()
     {
         float cameraWidth = mainCamera.transform.position.x;
-        if (player.transform.position.x + width / 2 < cameraWidth - 3f)
+        if (player.transform.position.x + width / 2 < cameraWidth - 2.5f)
         {
-            player.transform.position = new Vector2(cameraWidth + 3f,player.transform.position.y);
+            player.transform.position = new Vector2(cameraWidth + 2.5f,player.transform.position.y);
         }
-        else if (player.transform.position.x - width / 2 > cameraWidth + 3f)
+        else if (player.transform.position.x - width / 2 > cameraWidth + 2.5f)
         {
-            player.transform.position = new Vector2(cameraWidth - 3f, player.transform.position.y);
+            player.transform.position = new Vector2(cameraWidth - 2.5f, player.transform.position.y);
         }
     }
 
