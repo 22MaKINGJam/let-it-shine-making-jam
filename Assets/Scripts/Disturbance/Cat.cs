@@ -16,14 +16,14 @@ public class Cat : MonoBehaviour
     {
         cat.SetActive(false);
         spriterenderer = cat.GetComponent<SpriteRenderer>();
-        pos = GameObject.Find("Player").transform.position;
+        pos = GameObject.FindWithTag("Player").transform.position;
         selectCountdown = time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentPos = GameObject.Find("Player").transform.position;
+        currentPos = GameObject.FindWithTag("Player").transform.position;
         if (currentPos == pos)
         {
             if (Mathf.Floor(selectCountdown) <= 0)
@@ -42,7 +42,7 @@ public class Cat : MonoBehaviour
         }
         else
         {
-            pos = GameObject.Find("Player").transform.position;
+            pos = GameObject.FindWithTag("Player").transform.position;
             selectCountdown = time;
         }
     }
@@ -53,8 +53,7 @@ public class Cat : MonoBehaviour
         cat.SetActive(true);
         StartCoroutine("FadeInStart");
         isFadeIn = true;
-        //Invoke("fadeOut", 2f);
-        //GameOverManager.gameover();
+        Invoke("fadeOut", 2f);
     }
 
     void fadeOut()
@@ -73,21 +72,24 @@ public class Cat : MonoBehaviour
             spriterenderer.material.color = c;
             yield return new WaitForSeconds(0.1f);
         }
-        GameOverManager.gameover();
     }
 
     //페이드 인
     IEnumerator FadeOutStart()
     {
+        SpriteRenderer player = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>();
         for (int i = 10; i >= 0; i--)
         {
             float f = i / 10.0f;
             Color c = spriterenderer.material.color;
             c.a = f;
             spriterenderer.material.color = c;
+            player.color = c;
             yield return new WaitForSeconds(0.1f);
 
         }
+        GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("앗! 고양이한테 잡혀버렸어…멈추면 안돼! ");
+
     }
 
 }

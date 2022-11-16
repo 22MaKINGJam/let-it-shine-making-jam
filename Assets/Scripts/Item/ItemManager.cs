@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
     public GameObject itemPrefab;
-    public GameObject CookieCharacter;
+    public GameObject player;
+    public RuntimeAnimatorController cookiePlayer;
+
+    public GameObject ItemEffectPopup;
+    public string[] ItemEffectString;
 
     public int itemCount;
     public float minX, maxX, minY, maxY;
@@ -84,33 +89,30 @@ public class ItemManager : MonoBehaviour
         //}
         // 쉴드
         GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
-        ChangePlayer(CookieCharacter);
+        ChangePlayer(cookiePlayer);
         Invoke("ShieldFalse", shieldTime);
     }
 
-    public void ChangePlayer(GameObject obj)
+    public void ChangePlayer(RuntimeAnimatorController obj)
     {
         // 캐릭터 애니메이션 바꾸기 (진저쿠키 입히기)
         StartCoroutine(ChangingCharacter(obj));
     }
 
 
-    IEnumerator ChangingCharacter(GameObject new_)
+    IEnumerator ChangingCharacter(RuntimeAnimatorController newAnimation)
     {
-        GameObject temp = GameObject.FindWithTag("Player");
         int num = 2;
-        while (num-- >= 0)
+        while (num-- > 0)
         {
-            temp.GetComponent<SpriteRenderer>().color = new Color(0f,0f,0f,0f);
+            player.GetComponent<SpriteRenderer>().color = new Color(0f,0f,0f,0f);
             yield return new WaitForSeconds(0.2f);
-            temp.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
             yield return new WaitForSeconds(0.2f);
         }
-        float x = temp.transform.position.x;
-        float y = temp.transform.position.y;
-        // 플레이어 생성
-        Instantiate(new_, new Vector2(x,y), Quaternion.identity);
-        Destroy(temp);
+
+        // 애니메이션 변경
+        player.GetComponent<Animator>().runtimeAnimatorController = newAnimation;
     }
 
     public void EffectCandy()
@@ -118,6 +120,18 @@ public class ItemManager : MonoBehaviour
         // 점프 길이 n만큼 증가 (점프 force 증가)
         JumpFast();
         Invoke("JumpOrigin", shieldTime);
+    }
+
+    public void ItemPopupActive(int idx)
+    {
+        ItemEffectPopup.transform.GetChild(0).GetComponent<Text>().text = ItemEffectString[idx];
+        ItemEffectPopup.SetActive(true);
+        Invoke("RemovePopup", 1f);
+    }
+
+    void RemovePopup()
+    {
+        ItemEffectPopup.SetActive(false);
     }
 
     public void GetSuperJump()
@@ -133,15 +147,16 @@ public class ItemManager : MonoBehaviour
 
     void JumpFast()
     {
-        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().jumpPower *= jumpPowerUp;
-        GameObject.FindWithTag("Player").GetComponent<Player>().jumpPower *= jumpPowerUp;
+        Debug.Log("속도 빨라짐!");
+        player.GetComponent<PlayerDesktop>().jumpPower *= jumpPowerUp;
+        player.GetComponent<Player>().jumpPower *= jumpPowerUp;
     }
 
 
     void JumpOrigin()
     {
         Debug.Log("원래 속도 돌아옴!");
-        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().jumpPower /= jumpPowerUp;
-        GameObject.FindWithTag("Player").GetComponent<Player>().jumpPower /= jumpPowerUp;
+        player.GetComponent<PlayerDesktop>().jumpPower /= jumpPowerUp;
+        player.GetComponent<Player>().jumpPower /= jumpPowerUp;
     }
 }

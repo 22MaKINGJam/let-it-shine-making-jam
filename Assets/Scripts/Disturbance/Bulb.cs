@@ -30,14 +30,15 @@ public class Bulb : MonoBehaviour
             isColl = true;
             GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GameObject.FindWithTag("Player").GetComponent<AnimationController>().ElectricTrigger();
-            
+
             //캐릭터 움직임 비활성
+            GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = false;
             GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
             GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
             if (GameSaveData.life == 0)
             {
-                GameOverManager.gameover();
+                GameObject.Find("GameManager").GetComponent<GameOverManager>().gameOver("결국 생쥐들의 크리스마스는 반짝반짝거리지 못했다…");
             }
             Invoke("MovePlayer", 1f);
         }
@@ -48,9 +49,10 @@ public class Bulb : MonoBehaviour
         //캐릭터 움직임 활성
         GameObject.FindWithTag("Player").GetComponent<Player>().enabled = true;
         GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = true;
+        GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = true;
 
         GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        GameObject.Find("Bulb").GetComponent<BoxCollider2D>().enabled = false ;
+        GameObject.FindWithTag("Disturbance").GetComponent<Bulb>().enabled = false;
         //GameObject.FindWithTag("Player").GetComponent<Animator>().SetBool("isElectric", false);
     }
 

@@ -15,7 +15,7 @@ public class PlatformGenerator : MonoBehaviour
 
     private void Start()
     {
-        Vector3 spawnPosition = gameObject.transform.GetChild(0).position;
+        Vector3 spawnPosition = gameObject.transform.GetChild(0).position + new Vector3(0f, 1f, 0f);
         for (int i = 0; i < numberOfPlatforms; i++)
         {
             spawnPosition.x = Random.Range(- 2, 2);

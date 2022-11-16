@@ -15,6 +15,9 @@ public class LifeManager : MonoBehaviour
     public void LifeDown()
     {
         GameSaveData.life--;
-        lifeObj.GetComponent<Image>().sprite = lifes[GameSaveData.life];
+        if(GameSaveData.life >= 0)
+        {
+            lifeObj.GetComponent<Image>().sprite = lifes[GameSaveData.life];
+        }
     }
 }

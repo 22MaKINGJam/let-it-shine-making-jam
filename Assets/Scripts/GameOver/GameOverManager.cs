@@ -6,46 +6,55 @@ using System;
 public class GameOverManager : MonoBehaviour
 {
     public Camera mainCamera;
-    public static Action gameover;
+    public GameObject gameOverPopup;
+    public GameObject player;
+
     private float cameraBottom;
 
-    private float height;
+    private float height, width;
+
+    private bool isOver = false;
 
     private void Awake()
     {
-        gameover = () => { gameOver(); };
-        height = this.GetComponent<BoxCollider2D>().bounds.size.y;
+        height = player.GetComponent<BoxCollider2D>().bounds.size.y;
+        width = player.GetComponent<BoxCollider2D>().bounds.size.x;
     }
 
     void Update()
     {
         CheckIfFall();
+        CheckIfOut();
+    }
+
+    private void CheckIfOut()
+    {
+        float cameraWidth = mainCamera.transform.position.x;
+        if (player.transform.position.x + width / 2 < cameraWidth - 2.5f)
+        {
+            player.transform.position = new Vector2(cameraWidth + 2.5f,player.transform.position.y);
+        }
+        else if (player.transform.position.x - width / 2 > cameraWidth + 2.5f)
+        {
+            player.transform.position = new Vector2(cameraWidth - 2.5f, player.transform.position.y);
+        }
     }
 
     private void CheckIfFall() // 1. 카메라 밖으로 떨어지면 죽음.
     {
         cameraBottom = mainCamera.transform.position.y - 5;
-        if (this.transform.position.y - height/2 < cameraBottom)
+        if (player.transform.position.y + height/2 < cameraBottom && !isOver)
         {
-            gameOver();
+            isOver = true;
+            gameOver("결국 생쥐들의 크리스마스는 반짝반짝거리지 못했다…");
         }
     }
 
 
-    public void gameOver()
+    public void gameOver(string msg)
     {
         Debug.Log("게임오버");
-        GameObject.Find("Canvas").transform.Find("Panel_GameOver").gameObject.SetActive(true);
-        //Time.timeScale = 0f;
-
-        //GameObject.Find("finalobject").GetComponent<Panel_GameOver>().Show();
-       // GameObject.Find("Canvas").transform.FindChild("UI_gg").gameObject.SetActive(true);
-       // GameObject.Find("UI_gg").GetComponent<UI_Gameover>().Show();
-
-
-        //FindObjectOfType<JUMP>().Die();        // FindObjectOfType<PlatformManager>().Stop(); // 발판 그만 만들어.
-        //GameObject.Find("Canvas").transform.FindChild("UI_gg").gameObject.SetActive(true);
-        //GameObject.Find("UI_gg").GetComponent<UI_Gameover>().Show();//게임오버
-        // 게임오버되면? 메인으로 씬 전환? 기획애니메이션으로 씬 전환?*/
+        gameOverPopup.GetComponent<Panel_GameOver>().gameOverMsg = msg;
+        gameOverPopup.SetActive(true);
     }
 }

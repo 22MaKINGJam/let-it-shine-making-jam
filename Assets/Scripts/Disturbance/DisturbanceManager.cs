@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DisturbanceManager : MonoBehaviour
 {
-    public GameObject Player_;
+    public GameObject player;
+    public RuntimeAnimatorController originPlayer;
 
     // 방해요소 프리팹
     public GameObject [] disturbancPrefab;
@@ -50,7 +51,7 @@ public class DisturbanceManager : MonoBehaviour
                 isExist = true;
                 int disturbance = Random.Range(0, cnt);
                 disturbanceIdx = disturbance;
-                GameObject temp = null;
+                temp = null;
                 while(temp == null)
                 {
                     temp = SetDisturbance(disturbance);
@@ -86,6 +87,14 @@ public class DisturbanceManager : MonoBehaviour
 
     public void StartShield()
     {
+        // 함정 스크립트 비활성화
+        isSheild = true;
+
+        if (temp == null)
+        {
+            return;
+        }
+
         // 오너먼트는 통과되게
         // 전구 통과되게+ 스크립트 비활성화
         if (disturbanceIdx == 1)
@@ -94,28 +103,29 @@ public class DisturbanceManager : MonoBehaviour
         }
 
         temp.GetComponent<BoxCollider2D>().enabled = false;
-
-        // 함정 스크립트 비활성화
-        isSheild = true;
     }
 
 
     public void EndShield()
     {
-        if (temp.gameObject.activeSelf)
+        GameObject.Find("ItemManager").GetComponent<ItemManager>().ChangePlayer(originPlayer);
+        Invoke("RealEndShield", 0.5f);
+    }
+
+    void RealEndShield()
+    {
+        isSheild = false;
+        if (temp == null)
         {
-            if (disturbanceIdx == 1)
-            {
-                temp.GetComponent<Bulb>().enabled = true;
-            }
-
-            temp.GetComponent<BoxCollider2D>().enabled = true;
-
+            return;
         }
 
-        isSheild = false;
+        if (disturbanceIdx == 1)
+        {
+            temp.GetComponent<Bulb>().enabled = true;
+        }
 
-        GameObject.Find("ItemManager").GetComponent<ItemManager>().ChangePlayer(Player_);
+        temp.GetComponent<BoxCollider2D>().enabled = true;
     }
 }
 
