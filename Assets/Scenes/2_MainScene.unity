@@ -4293,6 +4293,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2796061831661125405, guid: c47ea551598414341a235c21b7e02eb4,
+        type: 3}
+      propertyPath: percentage
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 8596208568641887646, guid: c47ea551598414341a235c21b7e02eb4,
         type: 3}
       propertyPath: m_IsActive
