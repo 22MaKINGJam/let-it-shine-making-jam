@@ -51,8 +51,10 @@ public class GameSaveData : MonoBehaviour
 
     public void SaveScore(int score)
     {
-        if(score > maxScore)
+        maxScore = PlayerPrefs.GetInt("maxScore");
+        if (score > maxScore)
         {
+            Debug.Log("최고기록 갱신");
             PlayerPrefs.SetInt("maxScore", score);
         }
     }
