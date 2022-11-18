@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 8596208570627569498}
-  percentage: 850
+  percentage: 940
 --- !u!61 &4224199008385823732
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,3 +385,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c4409b2faaaf34a88d4470c9f08b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
