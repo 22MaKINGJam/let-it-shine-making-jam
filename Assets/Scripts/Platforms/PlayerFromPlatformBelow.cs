@@ -9,6 +9,7 @@ public class PlayerFromPlatformBelow : MonoBehaviour
     private float playerPos;
     private float platPos;
     private float cameraBottom;
+    private float height;
     
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -34,9 +35,10 @@ public class PlayerFromPlatformBelow : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        height = this.GetComponent<BoxCollider2D>().bounds.size.y;
         cameraBottom = GameObject.FindWithTag("MainCamera").transform.position.y - 5;
         platPos = this.transform.position.y;
-        if (platPos < cameraBottom) // 플랫폼이 카메라보다 아래에 있음
+        if (platPos - height / 2 < cameraBottom) // 플랫폼이 카메라보다 아래에 있음
         {
             Destroy(this.gameObject);
         }
