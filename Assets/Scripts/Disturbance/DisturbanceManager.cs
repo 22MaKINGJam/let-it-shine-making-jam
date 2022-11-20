@@ -114,6 +114,8 @@ public class DisturbanceManager : MonoBehaviour
 
     void RealEndShield()
     {
+        Debug.Log("쉴드 끝");
+
         isSheild = false;
         if (temp == null)
         {
