@@ -88,6 +88,7 @@ public class DisturbanceManager : MonoBehaviour
     public void StartShield()
     {
         // 함정 스크립트 비활성화
+        // 함정 충돌 관련 스크립트에서 관리 !! 
         isSheild = true;
 
         if (temp == null)

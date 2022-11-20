@@ -17,6 +17,12 @@ public class Ornament : MonoBehaviour
     {
         random_image();
         pos = transform.position;
+
+        // 쉴드 중이면 
+        if (GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().isSheild)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
     // Start is called before the first frame update
     void Awake()

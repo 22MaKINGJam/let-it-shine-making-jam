@@ -15,6 +15,12 @@ public class Bulb : MonoBehaviour
     void Start()
     {
         random_image();
+
+        // 쉴드 중이면 
+        if (GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().isSheild)
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     void Awake()
