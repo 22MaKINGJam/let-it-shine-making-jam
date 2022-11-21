@@ -3891,11 +3891,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9f66316d0a7aa6948901d29a56166794, type: 3}
-    m_FontSize: 60
+    m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 70
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3948,7 +3948,7 @@ MonoBehaviour:
   ItemEffectString:
   - "5\uCD08\uAC04 \uBB34\uC801!"
   - "\uC2A4\uD53C\uB4DC \uC5C5!"
-  - "\uC810\uC218 \uC5C5!"
+  - "\uD558\uD2B8 \uD68D\uB4DD!"
   itemCount: 100
   minX: -2
   maxX: 2

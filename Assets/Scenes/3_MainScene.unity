@@ -2041,7 +2041,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2716,7 +2716,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -18}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 580, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918255369
 MonoBehaviour:
@@ -2754,11 +2754,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9f66316d0a7aa6948901d29a56166794, type: 3}
-    m_FontSize: 60
+    m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 70
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4736,7 +4736,7 @@ MonoBehaviour:
   ItemEffectString:
   - "5\uCD08\uAC04 \uBB34\uC801!"
   - "\uC2A4\uD53C\uB4DC \uC5C5!"
-  - "\uC810\uC218 \uC5C5!"
+  - "\uD558\uD2B8 \uD68D\uB4DD!"
   itemCount: 50
   minX: -2
   maxX: 2
@@ -5598,6 +5598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c4409b2faaaf34a88d4470c9f08b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
 --- !u!50 &2126542748
 Rigidbody2D:
   serializedVersion: 4

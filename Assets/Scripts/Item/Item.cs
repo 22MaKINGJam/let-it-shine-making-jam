@@ -58,7 +58,8 @@ public class Item : MonoBehaviour
                 GameObject.Find("ItemManager").GetComponent<ItemManager>().ItemPopupActive(idx);
 
                 GameObject.Find("cheobject").GetComponent<Chescore>().GetScore();//1만큼 개수 증가
-                GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
+                // GameObject.Find("mainobject").GetComponent<Score>().GetScore();//1만큼 개수 증가
+                GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeUp(); // 하트 한 개 증가
                 ButtonSound._buttonInstance.OnCheeze();
                 OnDeleteObject();
                 break;

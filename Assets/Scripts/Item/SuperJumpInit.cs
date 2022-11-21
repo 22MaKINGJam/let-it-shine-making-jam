@@ -32,10 +32,12 @@ public class SuperJumpInit : MonoBehaviour
 
     void SuperJumpStart()
     {
+        GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
         ButtonSound._buttonInstance.OnJump2();
         // 슈퍼점프!
         GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().AddForce(Vector3.up * superJumpPower, ForceMode2D.Impulse);
         GameObject.FindWithTag("Player").GetComponent<AnimationController>().SuperJumpTrigger();
+        GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().EndShield();
     }
 
     public void OnNoButton()
