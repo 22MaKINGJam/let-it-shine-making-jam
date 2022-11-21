@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SuperJumpInit : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class SuperJumpInit : MonoBehaviour
     {
         if (GameSaveData.isSuperJump)
         {
+            //캐릭터 움직임 비활성
+            GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = false;
+            GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
+            GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
+            GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
+
             superJumpPopup.SetActive(true);
         }
     }
@@ -32,6 +39,7 @@ public class SuperJumpInit : MonoBehaviour
 
     void SuperJumpStart()
     {
+        TurnPlayerActive();
         GameObject.Find("DisturbanceManager").GetComponent<DisturbanceManager>().StartShield();
         ButtonSound._buttonInstance.OnJump2();
         // 슈퍼점프!
@@ -48,6 +56,17 @@ public class SuperJumpInit : MonoBehaviour
 
     void OnActiveFalse()
     {
+        TurnPlayerActive();
         superJumpNoPopup.SetActive(false);
+    }
+
+
+    void TurnPlayerActive()
+    {
+        //캐릭터 움직임 활성
+        GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = true;
+        GameObject.Find("JumpBtn").GetComponent<Button>().interactable = true;
+        GameObject.FindWithTag("Player").GetComponent<Player>().enabled = true;
+        GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = true;
     }
 }

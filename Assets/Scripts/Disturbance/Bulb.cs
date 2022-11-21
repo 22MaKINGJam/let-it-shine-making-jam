@@ -32,15 +32,16 @@ public class Bulb : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && isColl==false)
         {
-            GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
             isColl = true;
             GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GameObject.FindWithTag("Player").GetComponent<AnimationController>().ElectricTrigger();
 
             //캐릭터 움직임 비활성
             GameObject.Find("Joystick").GetComponent<VariableJoystick>().enabled = false;
+            GameObject.Find("JumpBtn").GetComponent<Button>().interactable = false;
             GameObject.FindWithTag("Player").GetComponent<Player>().enabled = false;
             GameObject.FindWithTag("Player").GetComponent<PlayerDesktop>().enabled = false;
+
             GameObject.Find("LifeManager").GetComponent<LifeManager>().LifeDown();
             if (GameSaveData.life == 0)
             {
